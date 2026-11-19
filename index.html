@@ -87,7 +87,7 @@ ul.pts li::marker { color: var(--c1); }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 8px; }
 .kpis > div { padding: 16px 18px 6px 0; display: flex; flex-direction: column; gap: 6px; }
 .kpis .label { color: #AFC2B3; font-size: 13px; }
-.kpis .num { font-size: 50px; color: var(--flag); }
+.kpis .num { font-size: clamp(34px, 4.6vw, 50px); color: var(--flag); white-space: nowrap; }
 .kpis .what { font-size: 15px; line-height: 1.35; color: #CBD6CC; }
 @media (max-width: 760px) { .kpis { grid-template-columns: 1fr 1fr; } }
 .agenda { display: flex; flex-wrap: wrap; gap: 8px 10px; }
@@ -257,9 +257,9 @@ table.opts td:first-child { white-space: nowrap; }
     <div role="listitem"><span class="label">Robustness checks</span><span class="num">10 of 10</span><span class="what">Checks where the timing split held</span></div>
   </div>
   <nav class="agenda" aria-label="Contents">
-    <a href="#summary"><b>02</b>Summary</a><a href="#market"><b>03</b>Market</a><a href="#method"><b>04</b>Method</a><a href="#timing"><b>05</b>Timing</a><a href="#why"><b>06</b>Why</a><a href="#path"><b>07</b>Path</a><a href="#financing"><b>08</b>Financing</a><a href="#architects"><b>09</b>Architects</a><a href="#robust"><b>10</b>How sure</a><a href="#board"><b>11</b>Board&rsquo;s choice</a><a href="#credit"><b>12</b>Credit</a><a href="#deal"><b>13</b>The deal</a><a href="#lbo"><b>14</b>LBO</a><a href="#limits"><b>15</b>Limits</a><a href="#appendix"><b>16</b>Appendix</a>
+    <a href="#summary"><b>02</b>Summary</a><a href="#market"><b>03</b>Market</a><a href="#method"><b>04</b>Method</a><a href="#timing"><b>05</b>Timing</a><a href="#why"><b>06</b>Why</a><a href="#path"><b>07</b>Path</a><a href="#financing"><b>08</b>Financing</a><a href="#architects"><b>09</b>Architects</a><a href="#robust"><b>10</b>How sure</a><a href="#board"><b>11</b>Board&rsquo;s choice</a><a href="#credit"><b>12</b>Credit</a><a href="#deal"><b>13</b>The deal</a><a href="#lbo"><b>14</b>LBO</a><a href="#rollup"><b>15</b>Roll-up</a><a href="#limits"><b>16</b>Limits</a><a href="#appendix"><b>17</b>Appendix</a>
   </nav>
-  <div class="foot"><span>Return on the Back Nine</span><span class="pg">01 / 17</span></div>
+  <div class="foot"><span>Return on the Back Nine</span><span class="pg">01 / 18</span></div>
 </section>
 
 <!-- 2 summary -->
@@ -276,7 +276,7 @@ table.opts td:first-child { white-space: nowrap; }
     <div class="card"><span class="k">How sure</span><p>The timing split held in all 10 robustness checks, though by little in some. The overall median moved between −2 and +22 points, so the size of the average effect is not pinned down.</p></div>
     <div class="card"><span class="k">For a buyer</span><p>In an illustrative acquisition, revenue has to end about 18% above the peer path for the renovation to earn as much as the rest of the deal. Pre-2020 clubs ended 17.1% above it, just under the 17.6% bar; the median club, at 8.2%, fell well short.</p></div>
   </div>
-  <div class="foot"><span>Source: IRS Form 990 via ProPublica and IRS e-file returns; author&rsquo;s analysis.</span><span class="pg">02 / 17</span></div>
+  <div class="foot"><span>Source: IRS Form 990 via ProPublica and IRS e-file returns; author&rsquo;s analysis.</span><span class="pg">02 / 18</span></div>
 </section>
 
 <!-- 3 market -->
@@ -312,7 +312,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>If course renovations reliably lift revenue, that is a large part of what these buyers are paying for. The rest of this deck tests whether they do.</span></div>
-  <div class="foot"><span>Sources: CMAA, NCA and Club Benchmarking; KSL; Reuters; Bloomberg; Bain Capital; SEC. Full list on slide 17.</span><span class="pg">03 / 17</span></div>
+  <div class="foot"><span>Sources: CMAA, NCA and Club Benchmarking; KSL; Reuters; Bloomberg; Bain Capital; SEC. Full list on slide 18.</span><span class="pg">03 / 18</span></div>
 </section>
 
 <!-- 4 method -->
@@ -335,7 +335,7 @@ table.opts td:first-child { white-space: nowrap; }
     <div><b>Fee-line rule</b>Part V, line 12a must be filled in for all four years, or one-time money can hide in revenue. Southern Hills and Seminole fail it.</div>
     <div><b>Spend and borrowing</b>Rise in total assets and in total liabilities over the three years to reopening. Matches reported costs at Diablo and Baltusrol.</div>
   </div>
-  <div class="foot"><span>Data: IRS Form 990 filings of 501(c)(7) social clubs, via ProPublica Nonprofit Explorer and the IRS&rsquo;s own e-file returns.</span><span class="pg">04 / 17</span></div>
+  <div class="foot"><span>Data: IRS Form 990 filings of 501(c)(7) social clubs, via ProPublica Nonprofit Explorer and the IRS&rsquo;s own e-file returns.</span><span class="pg">04 / 18</span></div>
 </section>
 
 <!-- 5 timing -->
@@ -383,7 +383,7 @@ table.opts td:first-child { white-space: nowrap; }
 </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>13 of 20 clubs that reopened before 2020 beat their peers. In 2020-22, 6 of 13 did. When a club reopened mattered more than who designed the course or how it was paid for.</span></div>
-  <div class="foot"><span>Points = growth in core member revenue minus the median growth of comparison clubs over the same years. FY = fiscal year the course reopened. Dashed line = group median. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed. Troon&rsquo;s bar runs off the chart; see its appendix note.</span><span class="pg">05 / 17</span></div>
+  <div class="foot"><span>Points = growth in core member revenue minus the median growth of comparison clubs over the same years. FY = fiscal year the course reopened. Dashed line = group median. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed. Troon&rsquo;s bar runs off the chart; see its appendix note.</span><span class="pg">05 / 18</span></div>
 </section>
 
 <!-- 6 why -->
@@ -416,7 +416,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>Before 2020, a new course was a way to take members from other clubs. In the boom, demand was high everywhere, so the renovation&rsquo;s edge disappeared.</span></div>
-  <div class="foot"><span>Medians across clubs in each group. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">06 / 17</span></div>
+  <div class="foot"><span>Medians across clubs in each group. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">06 / 18</span></div>
 </section>
 
 <!-- 7 financing -->
@@ -512,7 +512,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>The gap opens after the course reopens, not before. That makes the renovation the likely cause before 2020. In the boom it never opened.</span></div>
-  <div class="foot"><span>C = fiscal year the course reopened. Index = core member revenue over its level in year C&minus;4, times 100. Peers = the comparison clubs each club is measured against, same years. Medians across clubs.</span><span class="pg">07 / 17</span></div>
+  <div class="foot"><span>C = fiscal year the course reopened. Index = core member revenue over its level in year C&minus;4, times 100. Peers = the comparison clubs each club is measured against, same years. Medians across clubs.</span><span class="pg">07 / 18</span></div>
 </section>
 
 <section class="slide" id="financing">
@@ -579,7 +579,7 @@ table.opts td:first-child { white-space: nowrap; }
       </tbody>
     </table></div>
   </details>
-  <div class="foot"><span>Mostly borrowed: liabilities rose by at least 60% of spend. Member contributions: the initiation line ran 1.4x normal during construction. Spend ran $0.6M to $22.9M, median $6.1M. Baltusrol paid cash (GOLF.com).</span><span class="pg">08 / 17</span></div>
+  <div class="foot"><span>Mostly borrowed: liabilities rose by at least 60% of spend. Member contributions: the initiation line ran 1.4x normal during construction. Spend ran $0.6M to $22.9M, median $6.1M. Baltusrol paid cash (GOLF.com).</span><span class="pg">08 / 18</span></div>
 </section>
 
 <!-- 8 architects -->
@@ -650,7 +650,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>Spending more did not reliably buy more revenue. At full, waitlisted clubs, a star architect&rsquo;s payoff more likely shows up in championships and in what a membership is worth.</span></div>
-  <div class="foot"><span>One club&rsquo;s spend could not be measured from its balance sheet. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">09 / 17</span></div>
+  <div class="foot"><span>One club&rsquo;s spend could not be measured from its balance sheet. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">09 / 18</span></div>
 </section>
 
 <!-- 9 robustness -->
@@ -692,7 +692,7 @@ table.opts td:first-child { white-space: nowrap; }
       </tbody>
     </table></div>
   </details>
-  <div class="foot"><span>Each row re-runs the whole study one different way. Club counts per group are in the full table.</span><span class="pg">10 / 17</span></div>
+  <div class="foot"><span>Each row re-runs the whole study one different way. Club counts per group are in the full table.</span><span class="pg">10 / 18</span></div>
 </section>
 
 <!-- 10 board -->
@@ -740,7 +740,7 @@ table.opts td:first-child { white-space: nowrap; }
     </tbody>
   </table></div>
   <div class="takeaway"><span class="label">So what</span><span id="b-verdict"></span></div>
-  <div class="foot"><span>Illustrative. Break-even compares the assessment with the loan payments a member would make, discounted at 5% a year.</span><span class="pg">11 / 17</span></div>
+  <div class="foot"><span>Illustrative. Break-even compares the assessment with the loan payments a member would make, discounted at 5% a year.</span><span class="pg">11 / 18</span></div>
 </section>
 
 <!-- 11 credit -->
@@ -772,7 +772,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>A lender reads both ratios: how much of the club is owed, and how many years of revenue the obligations equal. Club names are left out of this slide on purpose.</span></div>
-  <div class="foot"><span>Latest e-filed Form 990 for each club, fiscal 2024 to 2026; 56 clubs, including the two used only in the robustness check.</span><span class="pg">12 / 17</span></div>
+  <div class="foot"><span>Latest e-filed Form 990 for each club, fiscal 2024 to 2026; 56 clubs, including the two used only in the robustness check.</span><span class="pg">12 / 18</span></div>
 </section>
 
 <!-- 12 deal -->
@@ -850,7 +850,7 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>At the median lift the renovation earns about 4% on its own and pulls the deal from 20% to 17%. It needs about 18% to keep up and 11% just to earn 10%. First diligence question: does the club have room to take members from rivals, or is it full with a waitlist?</span></div>
-  <div class="foot"><span>Illustrative model, not investment advice. The no-renovation case assumes the course holds its appeal with no investment, which flatters it.</span><span class="pg">13 / 17</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. The no-renovation case assumes the course holds its appeal with no investment, which flatters it.</span><span class="pg">13 / 18</span></div>
 </section>
 
 <!-- 13 lbo -->
@@ -896,12 +896,49 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>At 3x the median outcome earns 19% for the equity against 17% all cash. But debt lifts the no-renovation case even more, to 25%, so the lift the renovation needs to keep up rises from about 18% to about 21%. Leverage magnifies the baseline, so a so-so project looks worse next to it.</span></div>
-  <div class="foot"><span>Illustrative model, not investment advice. Term loan at the rate shown, 100% cash sweep, repaid at exit; interest is tax-deductible. Other assumptions as on slide 13.</span><span class="pg">14 / 17</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Term loan at the rate shown, 100% cash sweep, repaid at exit; interest is tax-deductible. Other assumptions as on slide 13.</span><span class="pg">14 / 18</span></div>
+</section>
+
+<!-- roll-up -->
+<section class="slide" id="rollup">
+  <div class="chrome label"><span class="sec"><b>15</b>Roll-up</span><span>Return on the Back Nine</span></div>
+  <h2>For a buyer of several clubs, picking ones with room to grow is worth about 6 points a year</h2>
+  <p class="dek">Two illustrative portfolios. Each buys four clubs sized like the study&rsquo;s at 3x leverage, renovates them in year one and sells all four at 8x in year seven, using the inputs from slide 14. The only difference is the revenue lift: one draws on outcomes from clubs that reopened before 2020, when clubs had room to win members; the other on 2020-22, when clubs were full.</p>
+  <div class="split even">
+    <div class="chartbox">
+      <p class="figtitle">Portfolio equity IRR</p>
+<div class="hbars">
+<div class="hb" title="Clubs with room to grow: 22%"><span class="nm">Clubs with room to grow</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar " style="left:0.00%;width:71.67%"></span></span><span class="v">22%</span></div>
+<div class="hb" title="Full clubs: 16%"><span class="nm">Full clubs</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar c2" style="left:0.00%;width:52.13%"></span></span><span class="v">16%</span></div>
+<div class="hb" title="Same clubs, no renovation: 25%"><span class="nm">Same clubs, no renovation</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar grey" style="left:0.00%;width:81.67%"></span></span><span class="v">25%</span></div>
+</div>
+      <p class="figtitle" style="margin-top:10px">Where the equity value comes from ($M, four clubs)</p>
+      <div class="legend"><span><i style="background:#2F7A4C"></i>Earnings growth</span><span><i style="background:#7FA88B"></i>Multiple expansion</span><span><i style="background:#C4823A"></i>Debt paydown</span><span><i style="background:#E3B23C"></i>Cash paid out along the way</span></div>
+<svg viewBox="0 0 600 110" width="100%" role="img" aria-label="Sources of equity value for each portfolio, in millions of dollars: earnings growth is the largest piece"><text x="0" y="26" font-size="15" fill="#16231B">Room to grow</text><rect x="150.0" y="6" width="159.3" height="30" fill="#2F7A4C"><title>Earnings growth: $55.3M</title></rect><text x="229.6" y="26" font-size="13" text-anchor="middle" fill="#FFFFFF">55</text><rect x="309.3" y="6" width="79.6" height="30" fill="#7FA88B"><title>Multiple expansion: $27.6M</title></rect><text x="349.1" y="26" font-size="13" text-anchor="middle" fill="#FFFFFF">28</text><rect x="388.8" y="6" width="62.8" height="30" fill="#C4823A"><title>Debt paydown: $21.8M</title></rect><text x="420.2" y="26" font-size="13" text-anchor="middle" fill="#FFFFFF">22</text><rect x="451.6" y="6" width="88.4" height="30" fill="#E3B23C"><title>Cash paid out along the way: $30.7M</title></rect><text x="495.8" y="26" font-size="13" text-anchor="middle" fill="#FFFFFF">31</text><text x="548.0" y="26" font-size="14" font-weight="600" fill="#16231B">$135M</text><text x="0" y="76" font-size="15" fill="#16231B">Full clubs</text><rect x="150.0" y="56" width="96.7" height="30" fill="#2F7A4C"><title>Earnings growth: $33.5M</title></rect><text x="198.3" y="76" font-size="13" text-anchor="middle" fill="#FFFFFF">34</text><rect x="246.7" y="56" width="62.4" height="30" fill="#7FA88B"><title>Multiple expansion: $21.7M</title></rect><text x="277.9" y="76" font-size="13" text-anchor="middle" fill="#FFFFFF">22</text><rect x="309.1" y="56" width="62.8" height="30" fill="#C4823A"><title>Debt paydown: $21.8M</title></rect><text x="340.5" y="76" font-size="13" text-anchor="middle" fill="#FFFFFF">22</text><rect x="371.8" y="56" width="51.7" height="30" fill="#E3B23C"><title>Cash paid out along the way: $17.9M</title></rect><text x="397.7" y="76" font-size="13" text-anchor="middle" fill="#FFFFFF">18</text><text x="431.5" y="76" font-size="14" font-weight="600" fill="#16231B">$95M</text></svg>
+    </div>
+    <div class="body">
+      <ul class="pts">
+        <li>Clubs with room to grow earn 22% a year on equity; full clubs earn 16%.</li>
+        <li>Both trail the 25% from owning the same clubs without renovating. The model assumes a course keeps its appeal with no investment, so the renovation only pays when it is needed to keep the club competitive.</li>
+        <li>Earnings growth is the biggest source of value for clubs with room to grow (41%), ahead of cash paid out along the way (23%), multiple expansion (20%) and debt paydown (16%).</li>
+      </ul>
+      <details><summary>See each club in both portfolios</summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Room to grow</th><th class="n">Revenue lift</th><th class="n">Equity IRR</th><th class="n">Multiple of money</th></tr></thead>
+          <tbody><tr><td>Club 1</td><td class="n">−7%</td><td class="n">10%</td><td class="n">1.8x</td></tr><tr><td>Club 2</td><td class="n">+8%</td><td class="n">19%</td><td class="n">3.0x</td></tr><tr><td>Club 3</td><td class="n">+22%</td><td class="n">25%</td><td class="n">4.0x</td></tr><tr><td>Club 4</td><td class="n">+34%</td><td class="n">29%</td><td class="n">4.9x</td></tr></tbody>
+          <thead><tr><th>Full clubs</th><th class="n">Revenue lift</th><th class="n">Equity IRR</th><th class="n">Multiple of money</th></tr></thead>
+          <tbody><tr><td>Club 1</td><td class="n">−6%</td><td class="n">10%</td><td class="n">1.9x</td></tr><tr><td>Club 2</td><td class="n">−5%</td><td class="n">11%</td><td class="n">2.0x</td></tr><tr><td>Club 3</td><td class="n">+4%</td><td class="n">16%</td><td class="n">2.6x</td></tr><tr><td>Club 4</td><td class="n">+17%</td><td class="n">23%</td><td class="n">3.6x</td></tr></tbody>
+        </table></div>
+      </details>
+    </div>
+  </div>
+  <div class="takeaway"><span class="label">So what</span><span>The screen comes before the shovel. A buyer should look for clubs that can still take members from rivals, not full clubs with a waitlist, and treat the renovation as defense as much as upside.</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Each club&rsquo;s lift is the 20th, 40th, 60th or 80th percentile of the study&rsquo;s results in that era. Equity in: $24.7M at close plus $22.0M for the renovations. Other assumptions as on slides 13 and 14.</span><span class="pg">15 / 18</span></div>
 </section>
 
 <!-- 13 limits -->
 <section class="slide" id="limits">
-  <div class="chrome label"><span class="sec"><b>15</b>Limits and method notes</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>16</b>Limits and method notes</span><span>Return on the Back Nine</span></div>
   <h2>The direction holds in every check; the size, and the odds it is luck, are not pinned down</h2>
   <div class="split even">
     <div class="panel">
@@ -918,19 +955,19 @@ table.opts td:first-child { white-space: nowrap; }
     <div class="panel">
       <h3>How this was built</h3>
       <ul class="pts">
-        <li><b>Data.</b> Every club figure comes from IRS Form 990 filings: ProPublica&rsquo;s Nonprofit Explorer, plus the IRS&rsquo;s own e-file returns for recent years and for the debt lines. Dates and architects come from the sources on slide 17.</li>
+        <li><b>Data.</b> Every club figure comes from IRS Form 990 filings: ProPublica&rsquo;s Nonprofit Explorer, plus the IRS&rsquo;s own e-file returns for recent years and for the debt lines. Dates and architects come from the sources on slide 18.</li>
         <li><b>Rules first.</b> The window, peer screen and fee-line rule were set before the new clubs were added. Clubs that broke a rule were dropped or moved to a check, not adjusted.</li>
         <li><b>Fair reading.</b> A negative number means revenue grew less than peers&rsquo;, not that a renovation failed. Credit figures leave names out.</li>
         <li><b>AI use.</b> Colton Burkhalter set the question, the angle and the title, and directed the work. Claude, Anthropic&rsquo;s AI model, pulled the filings, ran the analysis and built this page.</li>
       </ul>
     </div>
   </div>
-  <div class="foot"><span>Return on the Back Nine</span><span class="pg">15 / 17</span></div>
+  <div class="foot"><span>Return on the Back Nine</span><span class="pg">16 / 18</span></div>
 </section>
 
 <!-- 14 appendix -->
 <section class="slide" id="appendix">
-  <div class="chrome label"><span class="sec"><b>16</b>Appendix</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>17</b>Appendix</span><span>Return on the Back Nine</span></div>
   <h2>Club by club</h2>
   <div class="tablewrap"><table>
     <thead><tr><th>Club</th><th>City</th><th>Architect</th><th class="n">Reopened (FY)</th><th class="n">Before ($M)</th><th class="n">After ($M)</th><th class="n">Growth</th><th class="n">Peers</th><th class="n">vs. peers (pts)</th></tr></thead>
@@ -974,12 +1011,12 @@ table.opts td:first-child { white-space: nowrap; }
     <p class="note"><b>Comparison clubs:</b> Tulsa CC, Bloomfield Hills CC, Athens CC, Marietta CC, Hope Valley CC, La Jolla CC, Lakewood CC (Colorado), Charlotte CC, CC of Landfall, Midland CC, Bethesda CC, Burning Tree CC, Oakmont CC (Glendale), Skokie CC, CC of Darien, Overbrook GC, Manor CC, Willow Oaks CC, Valley Brook CC, Del Paso CC and West Shore CC. <b>Robustness check only:</b> Southern Hills CC (Tulsa, Gil Hanse, FY2019) and Seminole GC (Juno Beach, Coore &amp; Crenshaw, FY2019) leave the initiation-fee line blank in their after years; Southern Hills also hosted the 2022 PGA Championship.</p>
     <p class="note"><b>Left out:</b> Brook Hollow, Shady Oaks and Bear&rsquo;s Paw (no initiation fees reported in window years); Hillcrest, Los Angeles (fee line blank from fiscal 2019); Oakland Hills and Aronimink (not in ProPublica&rsquo;s data); Sycamore Hills (privately owned, no Form 990); Maketewah (too few years since reopening); Atlanta Athletic Club (overlapping projects); Country Club of Charleston (asset jump larger than the course work, missing years). This round: BraeBurn, Westchester Hills, North Ridge and Fort Lauderdale (fee line blank in a window year); Long Cove and Belfair (no Form 990 as a social club); Terravita (reopened FY2023). A log of every club considered, with the reason, is available from the author.</p>
   </div>
-  <div class="foot"><span>Core member revenue. Before = average of the 4th and 3rd years before reopening; after = average of the 2nd and 3rd years after. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed.</span><span class="pg">16 / 17</span></div>
+  <div class="foot"><span>Core member revenue. Before = average of the 4th and 3rd years before reopening; after = average of the 2nd and 3rd years after. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed.</span><span class="pg">17 / 18</span></div>
 </section>
 
 <!-- 15 sources -->
 <section class="slide" id="sources">
-  <div class="chrome label"><span class="sec"><b>17</b>Sources</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>18</b>Sources</span><span>Return on the Back Nine</span></div>
   <h2>Sources</h2>
   <div class="split even">
     <div class="body">
@@ -1043,7 +1080,7 @@ table.opts td:first-child { white-space: nowrap; }
       </ul>
     </div>
   </div>
-  <div class="foot"><span>All figures in $ millions unless noted. Project by Colton Burkhalter. The acquisition model is illustrative and is not investment advice.</span><span class="pg">17 / 17</span></div>
+  <div class="foot"><span>All figures in $ millions unless noted. Project by Colton Burkhalter. The acquisition model is illustrative and is not investment advice.</span><span class="pg">18 / 18</span></div>
 </section>
 
 </main>
