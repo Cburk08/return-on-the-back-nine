@@ -84,9 +84,17 @@ ul.pts li::marker { color: var(--c1); }
 .cover h1 em { font-style: italic; color: var(--flag); }
 .cover .sub { font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 3vw, 32px); color: #CFDDD1; line-height: 1.2; }
 .cover .dek { color: #CBD6CC; max-width: 62ch; }
-.storylink { margin: 4px 0 10px; font-family: var(--font-label); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 15px; }
-.storylink a { color: var(--flag); text-decoration: none; border-bottom: 1px solid rgba(227,178,60,0.5); }
-.storylink a:hover { border-bottom-color: var(--flag); }
+.tablewrap table.opm td, .tablewrap table.opm th { padding: 6px 8px; font-size: 14px; }
+table.opm tr.strong td { font-weight: 600; border-top: 1px solid var(--rule); }
+table.opm tr.sub td { color: var(--ink-2); font-size: 13px; }
+table.sens { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.sens th, table.sens td { padding: 7px 8px; border-bottom: 1px solid #E3E8E0; }
+table.sens td.win { background: #DCEBDF; color: var(--fairway-deep); font-weight: 600; }
+table.sens tr.sub td { color: var(--ink-2); font-style: italic; }
+table.sens small { color: var(--ink-2); font-weight: 400; }
+table.target td.note-cell, table.risks td { color: var(--ink-2); font-size: 14px; }
+table.risks td:first-child, table.target td:first-child { color: var(--ink); font-weight: 600; }
+table.risks td { vertical-align: top; padding: 8px 10px 8px 0; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 8px; }
 .kpis > div { padding: 16px 18px 6px 0; display: flex; flex-direction: column; gap: 6px; }
 .kpis .label { color: #AFC2B3; font-size: 13px; }
@@ -249,43 +257,42 @@ table.opts td:first-child { white-space: nowrap; }
 <!-- 1 cover -->
 <section class="slide cover" id="cover">
   <div class="chrome label"><span class="sec">Private club finance &middot; November 2026</span><span>Colton Burkhalter</span></div>
-  <p class="kicker label">A study of IRS Form 990 filings from 54 member-owned clubs</p>
+  <p class="kicker label">An investment case built on IRS Form 990 filings from 54 member-owned clubs</p>
   <h1>Return on the <em>Back Nine</em></h1>
   <p class="sub">The financing and returns of private club renovations</p>
-  <p class="dek">Private clubs spend millions rebuilding their golf courses, paid for with debt, cash or member assessments. This study measures how that money was raised, what it returned, and what it means for club boards and for the firms now buying clubs.</p>
-  <p class="storylink"><a href="story.html">Prefer a read? The story version: did the new course pay off? (5 min) &rarr;</a></p>
+  <p class="dek">Private equity platforms are buying member-owned golf clubs, and a course renovation is the main value-creation lever they underwrite. This book values a typical club, models the renovation as an all-cash deal, an LBO and a roll-up, and tests the revenue lift against IRS filings from 54 clubs.</p>
   <div class="kpis" role="list">
-    <div role="listitem"><span class="label">Reopened before 2020</span><span class="num">+20 pts</span><span class="what">Median revenue growth beyond comparison clubs</span></div>
-    <div role="listitem"><span class="label">Reopened 2020-22</span><span class="num">−2 pts</span><span class="what">About even once the membership boom lifted every club</span></div>
-    <div role="listitem"><span class="label">Lift a buyer needs</span><span class="num">~18%</span><span class="what">For the renovation to keep up with the rest of the deal</span></div>
-    <div role="listitem"><span class="label">Robustness checks</span><span class="num">10 of 10</span><span class="what">Checks where the timing split held</span></div>
+    <div role="listitem"><span class="label">Entry multiple</span><span class="num">6.3x</span><span class="what">What a member club sells for, against about 8x for platforms</span></div>
+    <div role="listitem"><span class="label">Revenue uplift, pre-2020</span><span class="num">+17%</span><span class="what">Above the peer path; −1% for clubs that reopened in the boom</span></div>
+    <div role="listitem"><span class="label">Lift a buyer needs</span><span class="num">~18%</span><span class="what">All cash; about 21% at 3x leverage</span></div>
+    <div role="listitem"><span class="label">Roll-up equity IRR</span><span class="num">22% / 16%</span><span class="what">Clubs with room to grow against full clubs</span></div>
   </div>
   <nav class="agenda" aria-label="Contents">
-    <a href="#summary"><b>02</b>Summary</a><a href="#market"><b>03</b>Market</a><a href="#method"><b>04</b>Method</a><a href="#timing"><b>05</b>Timing</a><a href="#why"><b>06</b>Why</a><a href="#path"><b>07</b>Path</a><a href="#financing"><b>08</b>Financing</a><a href="#architects"><b>09</b>Architects</a><a href="#robust"><b>10</b>How sure</a><a href="#board"><b>11</b>Board&rsquo;s choice</a><a href="#credit"><b>12</b>Credit</a><a href="#deal"><b>13</b>The deal</a><a href="#lbo"><b>14</b>LBO</a><a href="#rollup"><b>15</b>Roll-up</a><a href="#limits"><b>16</b>Limits</a><a href="#appendix"><b>17</b>Appendix</a>
+    <a href="#summary"><b>02</b>Thesis</a><a href="#market"><b>03</b>Industry</a><a href="#valuation"><b>04</b>Valuation</a><a href="#target"><b>05</b>Target</a><a href="#timing"><b>06</b>Value creation</a><a href="#opmodel"><b>08</b>Operating model</a><a href="#deal"><b>09</b>Returns</a><a href="#lbo"><b>10</b>LBO</a><a href="#sens"><b>11</b>Sensitivities</a><a href="#rollup"><b>12</b>Roll-up</a><a href="#credit"><b>13</b>Credit</a><a href="#financing"><b>14</b>Financing</a><a href="#architects"><b>16</b>Capex</a><a href="#risks"><b>17</b>Risks</a><a href="#method"><b>18</b>Appendix</a>
   </nav>
-  <div class="foot"><span>Return on the Back Nine</span><span class="pg">01 / 18</span></div>
+  <div class="foot"><span>Return on the Back Nine</span><span class="pg">01 / 22</span></div>
 </section>
 
 <!-- 2 summary -->
 <section class="slide" id="summary">
-  <div class="chrome label"><span class="sec"><b>02</b>Executive summary</span><span>Return on the Back Nine</span></div>
-  <h2>Timing mattered more than the architect or the financing</h2>
-  <p class="dek">Across 33 member-owned clubs that renovated their courses, core member revenue grew a median +11 points more than at 21 comparison clubs, with a wide spread. When the course reopened mattered most, though the gap is smaller than in the first version and luck cannot be ruled out.</p>
+  <div class="chrome label"><span class="sec"><b>02</b>Investment thesis</span><span>Return on the Back Nine</span></div>
+  <h2>Member clubs sell below platform multiples; a renovation adds value only where the club can still grow</h2>
+  <p class="dek">Platforms like Concert Golf, Arcis and Invited buy member-owned clubs, pay off their debt and fund capital projects, usually a new course. This book asks what that course is worth to a buyer. It values a typical club from its tax filings, measures how much a renovation lifted revenue at 33 clubs against 21 that did not renovate, and runs the result through an all-cash deal, an LBO and a four-club roll-up.</p>
   <div class="cards">
-    <div class="card"><span class="k">1 &middot; Timing</span><span class="num">+20 <small>vs.</small> −2</span><p>Points beyond peers for clubs that reopened before 2020 against those that reopened in 2020-22. The renovated clubs kept growing; the peers caught up in the boom.</p></div>
-    <div class="card"><span class="k">2 &middot; Financing</span><span class="num">No steady edge</span><p>14 of 33 clubs mostly borrowed. Within an era the gap flips: borrowers did worse than other clubs before 2020 and better in 2020-22, on small groups.</p></div>
-    <div class="card"><span class="k">3 &middot; Architects</span><span class="num">~1.6x <small>the spend</small></span><p>Big-name architects had a median spend of $7.4M against $4.6M. Their result was better before 2020 and worse in 2020-22, on four and five clubs.</p></div>
+    <div class="card"><span class="k">1 &middot; Entry</span><span class="num">6.3x</span><p>The typical club sells for its debt, its other liabilities and $2.0M to members: about 6.3x EBITDA, against about 8x for platforms. The multiple gap is the safe part of the return.</p></div>
+    <div class="card"><span class="k">2 &middot; Value creation</span><span class="num">+17% <small>vs.</small> −1%</span><p>Revenue above the peer path for clubs that reopened before 2020, against 2020-22. Before the boom a new course won members from rivals; in the boom every club filled up.</p></div>
+    <div class="card"><span class="k">3 &middot; Returns</span><span class="num">~18% <small>/</small> ~21%</span><p>The lift a renovation needs to keep up with the rest of the deal, all cash and at 3x. The study median is 8.2%, so the typical renovation does not earn its cost; a pre-2020-style club comes close.</p></div>
   </div>
   <div class="cards two">
-    <div class="card"><span class="k">How sure</span><p>The timing split held in all 10 robustness checks, though by little in some. The overall median moved between −2 and +22 points, so the size of the average effect is not pinned down.</p></div>
-    <div class="card"><span class="k">For a buyer</span><p>In an illustrative acquisition, revenue has to end about 18% above the peer path for the renovation to earn as much as the rest of the deal. Pre-2020 clubs ended 17.1% above it, just under the 17.6% bar; the median club, at 8.2%, fell well short.</p></div>
+    <div class="card"><span class="k">Underwriting</span><p>In a four-club roll-up at 3x, clubs with room to grow earn about 22% on equity and full clubs about 16%. Picking the club matters more than the course.</p></div>
+    <div class="card"><span class="k">Key risks</span><p>A small sample (33 clubs) and a wide range on the lift (−4% to +20%). Financing choice and big-name architects showed no steady effect. Margins are modeled because Form 990s do not report EBITDA.</p></div>
   </div>
-  <div class="foot"><span>Source: IRS Form 990 via ProPublica and IRS e-file returns; author&rsquo;s analysis.</span><span class="pg">02 / 18</span></div>
+  <div class="foot"><span>Source: IRS Form 990 via ProPublica and IRS e-file returns; author&rsquo;s analysis. Illustrative, not investment advice.</span><span class="pg">02 / 22</span></div>
 </section>
 
 <!-- 3 market -->
 <section class="slide" id="market">
-  <div class="chrome label"><span class="sec"><b>03</b>The market</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>03</b>Industry overview</span><span>Return on the Back Nine</span></div>
   <h2>Private clubs are consolidating, and buyers are paying for renovation upside</h2>
   <div class="split wide-r">
     <div class="stats">
@@ -316,116 +323,98 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>If course renovations reliably lift revenue, that is a large part of what these buyers are paying for. The rest of this deck tests whether they do.</span></div>
-  <div class="foot"><span>Sources: CMAA, NCA and Club Benchmarking; KSL; Reuters; Bloomberg; Bain Capital; SEC. Full list on slide 18.</span><span class="pg">03 / 18</span></div>
+  <div class="foot"><span>Sources: CMAA, NCA and Club Benchmarking; KSL; Reuters; Bloomberg; Bain Capital; SEC. Full list on slide 22.</span><span class="pg">03 / 22</span></div>
 </section>
 
-<!-- 4 method -->
-<section class="slide" id="method">
-  <div class="chrome label"><span class="sec"><b>04</b>Method</span><span>Return on the Back Nine</span></div>
-  <h2>The test: a club&rsquo;s revenue growth minus its peers&rsquo; growth over the same years</h2>
-  <p class="dek">This is a difference-in-differences test. Subtracting the peers nets out anything that hit every club at once, like the COVID boom. Worked example, Contra Costa Country Club:</p>
-  <div class="formula" aria-label="Club growth of 44 percent minus peers growth of 17 percent equals a renovation effect of +27 points">
-    <div class="box"><span class="label">Club&rsquo;s growth</span><span class="num">+44%</span><span class="note">Core member revenue, $3.94M before to $5.67M after</span></div>
-    <span class="op" aria-hidden="true">&minus;</span>
-    <div class="box"><span class="label">Peers&rsquo; growth</span><span class="num">+17%</span><span class="note">Median of comparison clubs, same years</span></div>
-    <span class="op" aria-hidden="true">=</span>
-    <div class="box result"><span class="label">Renovation effect</span><span class="num">+27 pts</span><span class="note">Percentage points beyond peers</span></div>
+<section class="slide" id="valuation">
+  <div class="chrome label"><span class="sec"><b>04</b>Valuation</span><span>Return on the Back Nine</span></div>
+  <h2>A member club changes hands near 6.3x EBITDA; platforms are valued near 8x</h2>
+  <p class="dek">What a buyer pays for the typical study club, against what platform multiples say it is worth today and in year seven, with and without the renovation. The price is the club&rsquo;s debt, the other liabilities a buyer takes on, and $2.0M to members.</p>
+  <div class="chartbox">
+    <p class="figtitle">Valuation range for the typical study club ($M)</p>
+<svg viewBox="0 0 760 290" width="100%" role="img" aria-label="Valuation range, in millions of dollars: the price to members against platform multiples today and in year seven"><line x1="300.0" x2="300.0" y1="22" y2="264" stroke="#DDE3D9"/><text x="300.0" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$0M</text><line x1="343.8" x2="343.8" y1="22" y2="264" stroke="#DDE3D9"/><text x="343.8" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$5M</text><line x1="387.5" x2="387.5" y1="22" y2="264" stroke="#DDE3D9"/><text x="387.5" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$10M</text><line x1="431.2" x2="431.2" y1="22" y2="264" stroke="#DDE3D9"/><text x="431.2" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$15M</text><line x1="475.0" x2="475.0" y1="22" y2="264" stroke="#DDE3D9"/><text x="475.0" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$20M</text><line x1="518.8" x2="518.8" y1="22" y2="264" stroke="#DDE3D9"/><text x="518.8" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$25M</text><line x1="562.5" x2="562.5" y1="22" y2="264" stroke="#DDE3D9"/><text x="562.5" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$30M</text><line x1="606.2" x2="606.2" y1="22" y2="264" stroke="#DDE3D9"/><text x="606.2" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$35M</text><line x1="650.0" x2="650.0" y1="22" y2="264" stroke="#DDE3D9"/><text x="650.0" y="282" text-anchor="middle" font-size="14" fill="#4A584F">$40M</text><line x1="399.8" x2="399.8" y1="22" y2="264" stroke="#16231B" stroke-dasharray="4 4"/><text x="0" y="45" font-size="15" font-weight="600" fill="#16231B">Price to the members today</text><text x="0" y="63" font-size="13" fill="#4A584F">debt + other liabilities + $2.0M to members = 6.3x year-0 EBITDA</text><rect x="395.8" y="34" width="8" height="26" fill="#16231B"/><text x="411.8" y="52" font-size="15" font-weight="600" fill="#16231B">$11.4M</text><text x="0" y="91" font-size="15" font-weight="600" fill="#16231B">Today's EBITDA at 7x to 9x</text><text x="0" y="109" font-size="13" fill="#4A584F">what a platform multiple says the club is worth now</text><rect x="411.2" y="80" width="31.8" height="26" rx="3" fill="#C4823A"><title>Today's EBITDA at 7x to 9x: $12.7M to $16.3M</title></rect><text x="450.9" y="98" font-size="14" fill="#16231B">$12.7M to $16.3M</text><text x="0" y="137" font-size="15" font-weight="600" fill="#16231B">Year 7, no renovation, 7x to 9x</text><text x="0" y="155" font-size="13" fill="#4A584F">organic growth only</text><rect x="482.3" y="126" width="52.1" height="26" rx="3" fill="#C4823A"><title>Year 7, no renovation, 7x to 9x: $20.8M to $26.8M</title></rect><text x="542.4" y="144" font-size="14" fill="#16231B">$20.8M to $26.8M</text><text x="0" y="183" font-size="15" font-weight="600" fill="#16231B">Year 7, renovated at the median lift (8%)</text><text x="0" y="201" font-size="13" fill="#4A584F">the study's typical outcome</text><rect x="519.7" y="172" width="62.8" height="26" rx="3" fill="#2F7A4C"><title>Year 7, renovated at the median lift (8%): $25.1M to $32.3M</title></rect><text x="590.4" y="190" font-size="14" fill="#16231B">$25.1M to $32.3M</text><text x="0" y="229" font-size="15" font-weight="600" fill="#16231B">Year 7, renovated at the pre-2020 lift (17%)</text><text x="0" y="247" font-size="13" fill="#4A584F">a club with room to win members</text><rect x="560.2" y="218" width="74.4" height="26" rx="3" fill="#2F7A4C"><title>Year 7, renovated at the pre-2020 lift (17%): $29.7M to $38.2M</title></rect><text x="642.6" y="236" font-size="14" fill="#16231B">$29.7M to $38.2M</text></svg>
   </div>
-  <div class="rules">
-    <div><b>Renovated clubs: 33</b>Member-owned clubs that reopened a renovated course in fiscal 2015 to 2022. Fifteen were added in this round: fourteen from renovation news and Columbus CC, moved over from the peers.</div>
-    <div><b>Comparison clubs: 21</b>Member-owned clubs whose assets never rose more than 15% in one year of the window (20% to 30% where too few qualified). Ten added in this round, matched on size and checked against renovation news.</div>
-    <div><b>Core member revenue</b>Total revenue minus initiation fees and capital contributions, and minus public-use income. Dues, golf, dining and other member spending.</div>
-    <div><b>Before and after</b>Average of the 4th and 3rd years before reopening against the 2nd and 3rd years after. Fiscal years, labeled by the year they end.</div>
-    <div><b>Fee-line rule</b>Part V, line 12a must be filled in for all four years, or one-time money can hide in revenue. Southern Hills and Seminole fail it.</div>
-    <div><b>Spend and borrowing</b>Rise in total assets and in total liabilities over the three years to reopening. Matches reported costs at Diablo and Baltusrol.</div>
+  <ul class="pts">
+    <li>The price, $11.4M, is 6.3x year-0 EBITDA of $1.81M. At 7x the same club is worth about $1.3M more on day one: the multiple gap is the first source of return.</li>
+    <li>At the study&rsquo;s median lift, a $6.1M renovation adds about $4.9M of year-7 value at 8x, less than it costs. At the pre-2020 lift it adds about $10.2M, well above the spend.</li>
+  </ul>
+  <div class="takeaway"><span class="label">So what</span><span>The buy is cheap; the renovation is the judgment call. Underwrite it on whether the club can still win members, not on the course.</span></div>
+  <div class="foot"><span>Illustrative, not investment advice. Year-7 values use modeled EBITDA (slide 8) at 7x to 9x; KSL reportedly paid about 8x for Invited.</span><span class="pg">04 / 22</span></div>
+</section>
+
+<section class="slide" id="target">
+  <div class="chrome label"><span class="sec"><b>05</b>Target profile</span><span>Return on the Back Nine</span></div>
+  <h2>The typical renovated club: $15.8M of revenue, $35.5M of assets and little debt</h2>
+  <p class="dek">Median figures for the 33 renovated clubs from their latest e-filed Form 990 (fiscal 2024 to 2026). Member clubs are asset-rich and lightly levered, which makes them cheap to buy and easy to finance.</p>
+  <div class="split even">
+    <div class="tablewrap"><table class="target">
+      <thead><tr><th>Median club</th><th class="n">Value</th><th>What it is</th></tr></thead>
+      <tbody><tr><td>Total revenue</td><td class="n">$15.8M</td><td class="note-cell">All income on the Form 990</td></tr><tr><td>Core member revenue</td><td class="n">$12.1M</td><td class="note-cell">About 77% of revenue: dues, golf, dining, member spending</td></tr><tr><td>Total assets</td><td class="n">$35.5M</td><td class="note-cell">Land, course, clubhouse, cash</td></tr><tr><td>Total liabilities</td><td class="n">$9.4M</td><td class="note-cell">Everything owed</td></tr><tr><td>of which debt</td><td class="n">$4.8M</td><td class="note-cell">Mortgages, notes and loans (Part X lines 23 and 24)</td></tr><tr><td>Members&rsquo; equity (net assets)</td><td class="n">$23.2M</td><td class="note-cell">What the members own outright</td></tr><tr><td>Debt to revenue</td><td class="n">0.35x</td><td class="note-cell">Low by corporate standards</td></tr><tr><td>Renovation spend</td><td class="n">$6.1M</td><td class="note-cell">Rise in assets over the three years to reopening</td></tr><tr><td>Year-0 EBITDA (modeled)</td><td class="n">$1.81M</td><td class="note-cell">15% margin on core revenue, rising to 20% by year 4</td></tr></tbody>
+    </table></div>
+    <div class="body">
+      <ul class="pts">
+        <li>Debt is only 0.35x revenue, so a buyer has room to add acquisition debt on top (slide 10).</li>
+        <li>Members own $23.2M of net assets on paper, but the club sells for $11.4M. Members trade that book value for an end to assessments and a payment.</li>
+        <li>Form 990s do not report EBITDA, so the model assumes a 15% margin on core member revenue, rising to 20% as the buyer runs the club.</li>
+      </ul>
+    </div>
   </div>
-  <div class="foot"><span>Data: IRS Form 990 filings of 501(c)(7) social clubs, via ProPublica Nonprofit Explorer and the IRS&rsquo;s own e-file returns.</span><span class="pg">04 / 18</span></div>
+  <div class="takeaway"><span class="label">So what</span><span>Asset-rich, cash-thin and lightly levered: the profile a financial buyer can recapitalize.</span></div>
+  <div class="foot"><span>Source: IRS Form 990 e-file returns; author&rsquo;s analysis. Each line is its own median, so the lines do not add up.</span><span class="pg">05 / 22</span></div>
 </section>
 
 <!-- 5 timing -->
 <section class="slide" id="timing">
-  <div class="chrome label"><span class="sec"><b>05</b>Finding 1 &middot; Timing</span><span>Return on the Back Nine</span></div>
-  <h2>Before 2020, renovated clubs beat peers by a median +20 points; in the boom, they did not</h2>
+  <div class="chrome label"><span class="sec"><b>06</b>Value creation</span><span>Return on the Back Nine</span></div>
+  <h2>Pre-2020 renovations ended 17% above their peers&rsquo; revenue path; in the boom, about even (−1%)</h2>
+  <p class="dek">Each bar is one club: how far its core member revenue ended above or below where it would have been growing like comparable clubs that did not renovate, over the same years. This is the revenue lift the deal model uses. The 2020-21 membership boom lifted every club and filled most of them, so a new course had few members left to win.</p>
   <div class="chartbox">
 <div class="hbars">
-<div class="hb axis-row"><span class="nm"></span><span class="tr"><span class="ax" style="right:70.23%">&larr; Trailed peers</span><span class="ax" style="left:31.77%">Beat peers &rarr;</span></span><span class="v yr">pts</span></div>
-<div class="grp c1"><span>Reopened FY2015-19 &middot; 20 clubs</span><span>Median +20 pts</span></div>
-<div class="hb" title="Inverness: +78"><span class="nm">Inverness<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:60.11%"></span></span><span class="v">+78</span></div>
-<div class="hb" title="Druid Hills: +54"><span class="nm">Druid Hills<small>FY2017</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:41.45%"></span></span><span class="v">+54</span></div>
-<div class="hb" title="Birmingham (Mich.): +42"><span class="nm">Birmingham (Mich.)<small>FY2016</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:32.40%"></span></span><span class="v">+42</span></div>
-<div class="hb" title="Northwood: +41"><span class="nm">Northwood<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:31.66%"></span></span><span class="v">+41</span></div>
-<div class="hb" title="Vestavia: +40"><span class="nm">Vestavia<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:30.82%"></span></span><span class="v">+40</span></div>
-<div class="hb" title="Cape Fear: +35"><span class="nm">Cape Fear<small>FY2019</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:27.23%"></span></span><span class="v">+35</span></div>
-<div class="hb" title="Contra Costa: +27"><span class="nm">Contra Costa<small>FY2015</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:20.96%"></span></span><span class="v">+27</span></div>
-<div class="hb" title="Chickasaw: +27"><span class="nm">Chickasaw<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:20.53%"></span></span><span class="v">+27</span></div>
-<div class="hb" title="Winged Foot West: +25"><span class="nm">Winged Foot West<small>FY2017</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:19.21%"></span></span><span class="v">+25</span></div>
-<div class="hb" title="Moraine: +22"><span class="nm">Moraine<small>FY2016</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:17.09%"></span></span><span class="v">+22</span></div>
-<div class="hb" title="Sara Bay: +18"><span class="nm">Sara Bay<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:13.66%"></span></span><span class="v">+18</span></div>
-<div class="hb" title="Meadowbrook: +11"><span class="nm">Meadowbrook<small>FY2017</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:8.44%"></span></span><span class="v">+11</span></div>
-<div class="hb" title="Baltimore CC East: +7"><span class="nm">Baltimore CC East<small>FY2016</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar " style="left:30.77%;width:5.54%"></span></span><span class="v">+7</span></div>
-<div class="hb" title="Biltmore Forest: −4"><span class="nm">Biltmore Forest<small>FY2015</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:27.39%;width:3.38%"></span></span><span class="v">−4</span></div>
-<div class="hb" title="Columbus: −5"><span class="nm">Columbus<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:26.91%;width:3.86%"></span></span><span class="v">−5</span></div>
-<div class="hb" title="Stanwich: −8"><span class="nm">Stanwich<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:24.59%;width:6.18%"></span></span><span class="v">−8</span></div>
-<div class="hb" title="Olympia Fields North: −11"><span class="nm">Olympia Fields North<small>FY2016</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:22.28%;width:8.49%"></span></span><span class="v">−11</span></div>
-<div class="hb" title="Orlando: −18"><span class="nm">Orlando<small>FY2018</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:16.71%;width:14.06%"></span></span><span class="v">−18</span></div>
-<div class="hb" title="Cedar Rapids: −23"><span class="nm">Cedar Rapids<small>FY2017</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:12.91%;width:17.86%"></span></span><span class="v">−23</span></div>
-<div class="hb" title="Bel-Air: −31"><span class="nm">Bel-Air<small>FY2019</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:46.14%"></span><span class="bar  neg" style="left:6.95%;width:23.82%"></span></span><span class="v">−31</span></div>
-<div class="grp c2"><span>Reopened FY2020-22 &middot; 13 clubs</span><span>Median −2 pts</span></div>
-<div class="hb" title="Troon: +139"><span class="nm">Troon<small>FY2021</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:69.23%"></span></span><span class="v">+139</span></div>
-<div class="hb" title="Oak Hill East: +42"><span class="nm">Oak Hill East<small>FY2020</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:32.14%"></span></span><span class="v">+42</span></div>
-<div class="hb" title="Kenwood Kendale: +29"><span class="nm">Kenwood Kendale<small>FY2021</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:22.58%"></span></span><span class="v">+29</span></div>
-<div class="hb" title="Fox Chapel: +19"><span class="nm">Fox Chapel<small>FY2021</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:14.53%"></span></span><span class="v">+19</span></div>
-<div class="hb" title="Diablo: +11"><span class="nm">Diablo<small>FY2020</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:8.78%"></span></span><span class="v">+11</span></div>
-<div class="hb" title="Merion East: +4"><span class="nm">Merion East<small>FY2020</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2" style="left:30.77%;width:2.70%"></span></span><span class="v">+4</span></div>
-<div class="hb" title="Pelham: −2"><span class="nm">Pelham<small>FY2020</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:29.46%;width:1.30%"></span></span><span class="v">−2</span></div>
-<div class="hb" title="Scioto: −7"><span class="nm">Scioto<small>FY2022</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:25.37%;width:5.40%"></span></span><span class="v">−7</span></div>
-<div class="hb" title="Congressional Blue: −8"><span class="nm">Congressional Blue<small>FY2021</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:24.65%;width:6.12%"></span></span><span class="v">−8</span></div>
-<div class="hb" title="El Caballero: −8"><span class="nm">El Caballero<small>FY2022</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:24.45%;width:6.32%"></span></span><span class="v">−8</span></div>
-<div class="hb" title="Nassau: −11"><span class="nm">Nassau<small>FY2022</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:22.14%;width:8.63%"></span></span><span class="v">−11</span></div>
-<div class="hb" title="Woodmont North: −13"><span class="nm">Woodmont North<small>FY2020</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:20.52%;width:10.25%"></span></span><span class="v">−13</span></div>
-<div class="hb" title="Baltusrol Lower: −33"><span class="nm">Baltusrol Lower<small>FY2022</small></span><span class="tr"><span class="zero" style="left:30.77%"></span><span class="medline" style="left:29.46%"></span><span class="bar c2 neg" style="left:5.08%;width:25.69%"></span></span><span class="v">−33</span></div>
+<div class="hb axis-row"><span class="nm"></span><span class="tr"><span class="ax" style="right:67.67%">&larr; Below peers</span><span class="ax" style="left:34.33%">Above peers &rarr;</span></span><span class="v yr">uplift</span></div>
+<div class="grp c1"><span>Reopened FY2015-19 &middot; 20 clubs</span><span>Median +17%</span></div>
+<div class="hb" title="Inverness: +65%"><span class="nm">Inverness<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:66.67%"></span></span><span class="v">+65%</span></div>
+<div class="hb" title="Druid Hills: +45%"><span class="nm">Druid Hills<small>FY2017</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:50.41%"></span></span><span class="v">+45%</span></div>
+<div class="hb" title="Birmingham (Mich.): +37%"><span class="nm">Birmingham (Mich.)<small>FY2016</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:40.96%"></span></span><span class="v">+37%</span></div>
+<div class="hb" title="Northwood: +34%"><span class="nm">Northwood<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:38.11%"></span></span><span class="v">+34%</span></div>
+<div class="hb" title="Vestavia: +33%"><span class="nm">Vestavia<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:37.10%"></span></span><span class="v">+33%</span></div>
+<div class="hb" title="Cape Fear: +28%"><span class="nm">Cape Fear<small>FY2019</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:30.75%"></span></span><span class="v">+28%</span></div>
+<div class="hb" title="Contra Costa: +23%"><span class="nm">Contra Costa<small>FY2015</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:25.94%"></span></span><span class="v">+23%</span></div>
+<div class="hb" title="Chickasaw: +22%"><span class="nm">Chickasaw<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:24.71%"></span></span><span class="v">+22%</span></div>
+<div class="hb" title="Winged Foot West: +21%"><span class="nm">Winged Foot West<small>FY2017</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:23.37%"></span></span><span class="v">+21%</span></div>
+<div class="hb" title="Moraine: +19%"><span class="nm">Moraine<small>FY2016</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:21.60%"></span></span><span class="v">+19%</span></div>
+<div class="hb" title="Sara Bay: +15%"><span class="nm">Sara Bay<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:16.45%"></span></span><span class="v">+15%</span></div>
+<div class="hb" title="Meadowbrook: +9%"><span class="nm">Meadowbrook<small>FY2017</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:10.26%"></span></span><span class="v">+9%</span></div>
+<div class="hb" title="Baltimore CC East: +6%"><span class="nm">Baltimore CC East<small>FY2016</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar " style="left:33.33%;width:7.00%"></span></span><span class="v">+6%</span></div>
+<div class="hb" title="Biltmore Forest: −4%"><span class="nm">Biltmore Forest<small>FY2015</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:29.16%;width:4.18%"></span></span><span class="v">−4%</span></div>
+<div class="hb" title="Columbus: −4%"><span class="nm">Columbus<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:28.68%;width:4.65%"></span></span><span class="v">−4%</span></div>
+<div class="hb" title="Stanwich: −7%"><span class="nm">Stanwich<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:25.89%;width:7.44%"></span></span><span class="v">−7%</span></div>
+<div class="hb" title="Olympia Fields North: −10%"><span class="nm">Olympia Fields North<small>FY2016</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:22.59%;width:10.74%"></span></span><span class="v">−10%</span></div>
+<div class="hb" title="Orlando: −15%"><span class="nm">Orlando<small>FY2018</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:16.40%;width:16.93%"></span></span><span class="v">−15%</span></div>
+<div class="hb" title="Cedar Rapids: −20%"><span class="nm">Cedar Rapids<small>FY2017</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:11.61%;width:21.72%"></span></span><span class="v">−20%</span></div>
+<div class="hb" title="Bel-Air: −24%"><span class="nm">Bel-Air<small>FY2019</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:52.36%"></span><span class="bar  neg" style="left:6.44%;width:26.89%"></span></span><span class="v">−24%</span></div>
+<div class="grp c2"><span>Reopened FY2020-22 &middot; 13 clubs</span><span>Median −1%</span></div>
+<div class="hb" title="Troon: +93%"><span class="nm">Troon<small>FY2021</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:66.67%"></span></span><span class="v">+93%</span></div>
+<div class="hb" title="Oak Hill East: +30%"><span class="nm">Oak Hill East<small>FY2020</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:33.33%"></span></span><span class="v">+30%</span></div>
+<div class="hb" title="Kenwood Kendale: +20%"><span class="nm">Kenwood Kendale<small>FY2021</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:21.81%"></span></span><span class="v">+20%</span></div>
+<div class="hb" title="Fox Chapel: +13%"><span class="nm">Fox Chapel<small>FY2021</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:14.03%"></span></span><span class="v">+13%</span></div>
+<div class="hb" title="Diablo: +8%"><span class="nm">Diablo<small>FY2020</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:9.11%"></span></span><span class="v">+8%</span></div>
+<div class="hb" title="Merion East: +3%"><span class="nm">Merion East<small>FY2020</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2" style="left:33.33%;width:2.80%"></span></span><span class="v">+3%</span></div>
+<div class="hb" title="Pelham: −1%"><span class="nm">Pelham<small>FY2020</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:31.98%;width:1.35%"></span></span><span class="v">−1%</span></div>
+<div class="hb" title="Scioto: −5%"><span class="nm">Scioto<small>FY2022</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:28.31%;width:5.02%"></span></span><span class="v">−5%</span></div>
+<div class="hb" title="El Caballero: −5%"><span class="nm">El Caballero<small>FY2022</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:27.47%;width:5.87%"></span></span><span class="v">−5%</span></div>
+<div class="hb" title="Congressional Blue: −5%"><span class="nm">Congressional Blue<small>FY2021</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:27.43%;width:5.91%"></span></span><span class="v">−5%</span></div>
+<div class="hb" title="Nassau: −7%"><span class="nm">Nassau<small>FY2022</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:25.31%;width:8.02%"></span></span><span class="v">−7%</span></div>
+<div class="hb" title="Woodmont North: −10%"><span class="nm">Woodmont North<small>FY2020</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:22.70%;width:10.63%"></span></span><span class="v">−10%</span></div>
+<div class="hb" title="Baltusrol Lower: −21%"><span class="nm">Baltusrol Lower<small>FY2022</small></span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="medline" style="left:31.98%"></span><span class="bar c2 neg" style="left:9.46%;width:23.87%"></span></span><span class="v">−21%</span></div>
 </div>
   </div>
-  <div class="takeaway"><span class="label">So what</span><span>13 of 20 clubs that reopened before 2020 beat their peers. In 2020-22, 6 of 13 did. When a club reopened mattered more than who designed the course or how it was paid for.</span></div>
-  <div class="foot"><span>Points = growth in core member revenue minus the median growth of comparison clubs over the same years. FY = fiscal year the course reopened. Dashed line = group median. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed. Troon&rsquo;s bar runs off the chart; see its appendix note.</span><span class="pg">05 / 18</span></div>
-</section>
-
-<!-- 6 why -->
-<section class="slide" id="why">
-  <div class="chrome label"><span class="sec"><b>06</b>Finding 1 &middot; Why</span><span>Return on the Back Nine</span></div>
-  <h2>Renovated clubs kept growing; in the boom, their peers caught up</h2>
-  <div class="split">
-    <div class="chartbox">
-      <p class="figtitle">Median growth in core member revenue, before to after</p>
-      <div class="legend"><span><i class="c1"></i>Renovated clubs</span><span><i class="c2"></i>Their peers</span></div>
-<div class="hbars">
-<div class="grp c1"><span>Reopened FY2015-19</span></div>
-<div class="hb" title="Renovated clubs: +37%"><span class="nm">Renovated clubs</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar " style="left:0.00%;width:61.67%"></span></span><span class="v">+37%</span></div>
-<div class="hb" title="Their peers: +19%"><span class="nm">Their peers</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar c2" style="left:0.00%;width:31.67%"></span></span><span class="v">+19%</span></div>
-<div class="grp c2"><span>Reopened FY2020-22</span></div>
-<div class="hb" title="Renovated clubs: +47%"><span class="nm">Renovated clubs</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar " style="left:0.00%;width:78.33%"></span></span><span class="v">+47%</span></div>
-<div class="hb" title="Their peers: +50%"><span class="nm">Their peers</span><span class="tr"><span class="zero" style="left:0.00%"></span><span class="bar c2" style="left:0.00%;width:83.33%"></span></span><span class="v">+50%</span></div>
-</div>
-    </div>
-    <div class="body">
-      <ul class="pts">
-        <li>Renovated clubs grew 37% before the boom and 47% during it.</li>
-        <li>Their peers grew 19% before the boom and 50% during it.</li>
-        <li>The 2020-21 membership boom lifted every club, and many filled up. A new course had little room to win members from rivals that were filling up too.</li>
-      </ul>
-      <div class="panel">
-        <span class="label" style="color:var(--fairway)">Could this be luck?</span>
-        <p class="note">If the 33 results were shuffled into random groups of 20 and 13, a gap this large would show up about 12% of the time, so luck cannot be ruled out. The 15 clubs added in this round point the same way: +18 points before 2020 (5 of 9 beat peers) against −5 in 2020-22 (6 clubs). Round two&rsquo;s 7 pre-2020 clubs came in at +7.</p>
-      </div>
-    </div>
-  </div>
-  <div class="takeaway"><span class="label">So what</span><span>Before 2020, a new course was a way to take members from other clubs. In the boom, demand was high everywhere, so the renovation&rsquo;s edge disappeared.</span></div>
-  <div class="foot"><span>Medians across clubs in each group. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">06 / 18</span></div>
+  <div class="takeaway"><span class="label">So what</span><span>13 of 20 pre-2020 clubs beat their peers; 6 of 13 did in 2020-22. For a buyer, the lift depends on the market the club is in, not on the course alone.</span></div>
+  <div class="foot"><span>Uplift = (1 + the club&rsquo;s growth) / (1 + its peers&rsquo; median growth) &minus; 1, core member revenue, before vs. after reopening. FY = fiscal year the course reopened. Dashed line = group median. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed. Troon&rsquo;s bar runs off the chart.</span><span class="pg">06 / 22</span></div>
 </section>
 
 <!-- 7 financing -->
 <section class="slide" id="path">
-  <div class="chrome label"><span class="sec"><b>07</b>Finding 1 &middot; Path</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>07</b>Value creation &middot; Evidence</span><span>Return on the Back Nine</span></div>
   <h2>Renovated clubs moved with their peers until the course reopened</h2>
   <div class="split">
     <div class="chartbox">
@@ -516,274 +505,27 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>The gap opens after the course reopens, not before. That makes the renovation the likely cause before 2020. In the boom it never opened.</span></div>
-  <div class="foot"><span>C = fiscal year the course reopened. Index = core member revenue over its level in year C&minus;4, times 100. Peers = the comparison clubs each club is measured against, same years. Medians across clubs.</span><span class="pg">07 / 18</span></div>
+  <div class="foot"><span>C = fiscal year the course reopened. Index = core member revenue over its level in year C&minus;4, times 100. Peers = the comparison clubs each club is measured against, same years. Medians across clubs.</span><span class="pg">07 / 22</span></div>
 </section>
 
-<section class="slide" id="financing">
-  <div class="chrome label"><span class="sec"><b>08</b>Finding 2 &middot; Financing</span><span>Return on the Back Nine</span></div>
-  <h2>How a club paid did not predict the result</h2>
-  <div class="split even">
-    <div class="chartbox">
-      <p class="figtitle">Median points vs. peers, by how the renovation was paid for</p>
-<div class="hbars">
-<div class="hb" title="Mostly borrowed: +11"><span class="nm">Mostly borrowed<small>14 clubs</small></span><span class="tr"><span class="zero" style="left:42.86%"></span><span class="bar " style="left:42.86%;width:15.99%"></span></span><span class="v">+11</span></div>
-<div class="hb" title="Mix of debt and cash: +10"><span class="nm">Mix of debt and cash<small>4 clubs</small></span><span class="tr"><span class="zero" style="left:42.86%"></span><span class="bar " style="left:42.86%;width:14.66%"></span></span><span class="v">+10</span></div>
-<div class="hb" title="Member contributions: +30"><span class="nm">Member contributions<small>4 clubs</small></span><span class="tr"><span class="zero" style="left:42.86%"></span><span class="bar " style="left:42.86%;width:42.89%"></span></span><span class="v">+30</span></div>
-<div class="hb" title="Cash: −11"><span class="nm">Cash<small>5 clubs</small></span><span class="tr"><span class="zero" style="left:42.86%"></span><span class="bar  neg" style="left:26.83%;width:16.03%"></span></span><span class="v">−11</span></div>
-</div>
-      <p class="note">Grey bars have fewer than four clubs, so treat them as anecdotes.</p>
-    </div>
-    <div class="chartbox">
-      <p class="figtitle">Within an era, the edge flips</p>
-      <div class="legend"><span><i class="c1 dot"></i>Mostly borrowed</span><span><i class="c2 dot"></i>Everyone else</span></div>
-<div class="db-axis"><span></span><span class="tr"><span class="t" style="left:0.00%">−10</span><span class="t" style="left:25.00%">0</span><span class="t" style="left:50.00%">+10</span><span class="t" style="left:75.00%">+20</span><span class="t" style="left:100.00%">+30</span></span><span class="h">pts</span></div>
-<div class="db" title="Reopened before 2020: +14 vs. +22"><span class="nm">Reopened before 2020</span><span class="tr"><span class="zero" style="left:25.00%"></span><span class="ln" style="left:60.91%;width:19.62%"></span><span class="d c2" style="left:80.53%"></span><span class="d c1" style="left:60.91%"></span></span><span class="v">+14 / +22</span></div>
-<div class="db" title="Reopened 2020-22: +7 vs. −4"><span class="nm">Reopened 2020-22</span><span class="tr"><span class="zero" style="left:25.00%"></span><span class="ln" style="left:14.10%;width:29.55%"></span><span class="d c2" style="left:14.10%"></span><span class="d c1" style="left:43.65%"></span></span><span class="v">+7 / −4</span></div>
-      <p class="note">Borrowers looked better overall (+11 vs. −2). Within an era they did worse before 2020 (+14 vs. +22) and better in 2020-22 (+7 vs. −4, on 4 and 6 clubs). No steady pattern.</p>
-    </div>
-  </div>
-  <div class="takeaway"><span class="label">So what</span><span>Financing decides who pays and who carries the risk, not the return. That is the board&rsquo;s question on slide 11.</span></div>
-  <details><summary>See spend and borrowing for each club</summary>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Club</th><th class="n">Reopened (FY)</th><th class="n">Spend ($M)</th><th class="n">Borrowed ($M)</th><th>How it was paid</th><th class="n">vs. peers (pts)</th></tr></thead>
-      <tbody>
-<tr><td>Northwood Club</td><td class="n">2018</td><td class="n">22.9</td><td class="n">11.3</td><td>Member contributions</td><td class="n">+41</td></tr>
-<tr><td>Baltusrol GC (Lower)</td><td class="n">2022</td><td class="n">17.8</td><td class="n">0.9</td><td>Cash</td><td class="n">−33</td></tr>
-<tr><td>Congressional CC (Blue)</td><td class="n">2021</td><td class="n">16.6</td><td class="n">11.9</td><td>Mostly borrowed</td><td class="n">−8</td></tr>
-<tr><td>Diablo CC</td><td class="n">2020</td><td class="n">11.6</td><td class="n">13.0</td><td>Mostly borrowed</td><td class="n">+11</td></tr>
-<tr><td>CC of Orlando</td><td class="n">2018</td><td class="n">10.4</td><td class="n">9.6</td><td>Mostly borrowed</td><td class="n">−18</td></tr>
-<tr><td>Biltmore Forest CC</td><td class="n">2015</td><td class="n">8.8</td><td class="n">6.5</td><td>Mostly borrowed</td><td class="n">−4</td></tr>
-<tr><td>Vestavia CC</td><td class="n">2018</td><td class="n">7.8</td><td class="n">7.0</td><td>Mostly borrowed</td><td class="n">+40</td></tr>
-<tr><td>Bel-Air CC</td><td class="n">2019</td><td class="n">7.6</td><td class="n">4.6</td><td>Member contributions</td><td class="n">−31</td></tr>
-<tr><td>Merion GC (East)</td><td class="n">2020</td><td class="n">7.5</td><td class="n">4.9</td><td>Mostly borrowed</td><td class="n">+4</td></tr>
-<tr><td>Scioto CC</td><td class="n">2022</td><td class="n">7.4</td><td class="n">4.1</td><td>Mix of debt and cash</td><td class="n">−7</td></tr>
-<tr><td>Winged Foot GC (West)</td><td class="n">2017</td><td class="n">7.1</td><td class="n">2.6</td><td>Mix of debt and cash</td><td class="n">+25</td></tr>
-<tr><td>Inverness Club</td><td class="n">2018</td><td class="n">6.7</td><td class="n">6.2</td><td>Mostly borrowed</td><td class="n">+78</td></tr>
-<tr><td>Meadowbrook CC</td><td class="n">2017</td><td class="n">6.4</td><td class="n">5.1</td><td>Mostly borrowed</td><td class="n">+11</td></tr>
-<tr><td>Pelham CC</td><td class="n">2020</td><td class="n">6.1</td><td class="n">2.8</td><td>Mix of debt and cash</td><td class="n">−2</td></tr>
-<tr><td>Troon CC</td><td class="n">2021</td><td class="n">5.3</td><td class="n">1.0</td><td>Member contributions</td><td class="n">+139</td></tr>
-<tr><td>Moraine CC</td><td class="n">2016</td><td class="n">5.3</td><td class="n">2.3</td><td>Mix of debt and cash</td><td class="n">+22</td></tr>
-<tr><td>Cape Fear CC</td><td class="n">2019</td><td class="n">5.1</td><td class="n">3.2</td><td>Mostly borrowed</td><td class="n">+35</td></tr>
-<tr><td>Oak Hill CC (East)</td><td class="n">2020</td><td class="n">4.1</td><td class="n">2.6</td><td>Mostly borrowed</td><td class="n">+42</td></tr>
-<tr><td>Druid Hills GC</td><td class="n">2017</td><td class="n">3.9</td><td class="n">0.2</td><td>Cash</td><td class="n">+54</td></tr>
-<tr><td>Contra Costa CC</td><td class="n">2015</td><td class="n">2.9</td><td class="n">2.8</td><td>Mostly borrowed</td><td class="n">+27</td></tr>
-<tr><td>Fox Chapel GC</td><td class="n">2021</td><td class="n">2.6</td><td class="n">−0.3</td><td>Member contributions</td><td class="n">+19</td></tr>
-<tr><td>Baltimore CC (East)</td><td class="n">2016</td><td class="n">1.9</td><td class="n">1.2</td><td>Mostly borrowed</td><td class="n">+7</td></tr>
-<tr><td>Columbus CC</td><td class="n">2018</td><td class="n">1.8</td><td class="n">1.9</td><td>Mostly borrowed</td><td class="n">−5</td></tr>
-<tr><td>Nassau CC</td><td class="n">2022</td><td class="n">1.7</td><td class="n">−0.7</td><td>Cash</td><td class="n">−11</td></tr>
-<tr><td>Stanwich Club</td><td class="n">2018</td><td class="n">1.5</td><td class="n">−0.2</td><td>Cash</td><td class="n">−8</td></tr>
-<tr><td>Sara Bay CC</td><td class="n">2018</td><td class="n">1.2</td><td class="n">0.9</td><td>Mostly borrowed</td><td class="n">+18</td></tr>
-<tr><td>Cedar Rapids CC</td><td class="n">2017</td><td class="n">0.6</td><td class="n">−1.1</td><td>Cash</td><td class="n">−23</td></tr>
-<tr><td>Birmingham CC (Mich.)</td><td class="n">2016</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+42</td></tr>
-<tr><td>Olympia Fields CC (North)</td><td class="n">2016</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−11</td></tr>
-<tr><td>Woodmont CC (North)</td><td class="n">2020</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−13</td></tr>
-<tr><td>Chickasaw CC</td><td class="n">2018</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+27</td></tr>
-<tr><td>Kenwood CC (Kendale)</td><td class="n">2021</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+29</td></tr>
-<tr><td>El Caballero CC</td><td class="n">2022</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−8</td></tr>
-      </tbody>
-    </table></div>
-  </details>
-  <div class="foot"><span>Mostly borrowed: liabilities rose by at least 60% of spend. Member contributions: the initiation line ran 1.4x normal during construction. Spend ran $0.6M to $22.9M, median $6.1M. Baltusrol paid cash (GOLF.com).</span><span class="pg">08 / 18</span></div>
-</section>
-
-<!-- 8 architects -->
-<section class="slide" id="architects">
-  <div class="chrome label"><span class="sec"><b>09</b>Finding 3 &middot; Architects</span><span>Return on the Back Nine</span></div>
-  <h2>Big-name architects cost about 1.6x as much, with no steady revenue premium</h2>
-  <div class="split">
-    <div class="chartbox">
-      <p class="figtitle">Spend vs. result, 27 clubs with measurable spend</p>
-      <div class="legend"><span><i class="c1 dot"></i>Hanse, Green, Coore &amp; Crenshaw, Doak</span><span><i class="ring"></i>Everyone else</span></div>
-<svg viewBox="0 0 640 380" width="100%" role="img" aria-label="Scatter of renovation spend against points versus peers; no clear pattern, and big-name projects are spread across the range">
-<line x1="58" x2="620" y1="309.5" y2="309.5" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="314.5" text-anchor="end" font-size="15" fill="#4A584F">−30</text>
-<line x1="58" x2="620" y1="236.2" y2="236.2" stroke="#16231B" stroke-width="1.5"/><text x="50" y="241.2" text-anchor="end" font-size="15" fill="#4A584F">0</text>
-<line x1="58" x2="620" y1="162.8" y2="162.8" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="167.8" text-anchor="end" font-size="15" fill="#4A584F">+30</text>
-<line x1="58" x2="620" y1="89.4" y2="89.4" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="94.4" text-anchor="end" font-size="15" fill="#4A584F">+60</text>
-<line x1="58" x2="620" y1="16.0" y2="16.0" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="21.0" text-anchor="end" font-size="15" fill="#4A584F">+90</text>
-<text x="58.0" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$0M</text>
-<text x="170.4" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$5M</text>
-<text x="282.8" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$10M</text>
-<text x="395.2" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$15M</text>
-<text x="507.6" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$20M</text>
-<text x="620.0" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$25M</text>
-<text x="620" y="374" text-anchor="end" font-size="14" fill="#4A584F" letter-spacing="1">SPEND ON THE PROJECT &rarr;</text>
-<text x="58" y="14" font-size="14" fill="#4A584F" letter-spacing="1">POINTS VS. PEERS</text>
-<circle cx="146.0" cy="104.4" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Druid Hills: $3.9M, +54 pts</title></circle>
-<text x="154.0" y="108.4" text-anchor="start" font-size="15" fill="#16231B">Druid Hills</text>
-<circle cx="319.6" cy="208.2" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Diablo: $11.6M, +11 pts</title></circle>
-<circle cx="116.6" cy="190.0" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Fox Chapel: $2.6M, +19 pts</title></circle>
-<circle cx="572.9" cy="135.5" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Northwood: $22.9M, +41 pts</title></circle>
-<text x="562.9" y="139.5" text-anchor="end" font-size="15" fill="#16231B">Northwood</text>
-<circle cx="72.0" cy="292.9" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Cedar Rapids: $0.6M, −23 pts</title></circle>
-<text x="82.0" y="296.9" text-anchor="start" font-size="15" fill="#16231B">Cedar Rapids</text>
-<circle cx="201.1" cy="209.3" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Meadowbrook: $6.4M, +11 pts</title></circle>
-<circle cx="100.5" cy="218.5" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Baltimore CC East: $1.9M, +7 pts</title></circle>
-<circle cx="256.0" cy="246.9" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Biltmore Forest: $8.8M, −4 pts</title></circle>
-<circle cx="124.1" cy="169.5" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Contra Costa: $2.9M, +27 pts</title></circle>
-<circle cx="177.0" cy="181.8" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Moraine: $5.3M, +22 pts</title></circle>
-<circle cx="84.3" cy="192.7" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Sara Bay: $1.2M, +18 pts</title></circle>
-<circle cx="232.6" cy="138.1" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Vestavia: $7.8M, +40 pts</title></circle>
-<circle cx="177.1" cy="16.0" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Troon: $5.3M, +139 pts</title></circle>
-<text x="187.1" y="20.0" text-anchor="start" font-size="15" fill="#16231B">Troon (+139, off the chart)</text>
-<circle cx="291.6" cy="280.9" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Orlando: $10.4M, −18 pts</title></circle>
-<circle cx="195.5" cy="240.3" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Pelham: $6.1M, −2 pts</title></circle>
-<circle cx="90.8" cy="255.8" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Stanwich: $1.5M, −8 pts</title></circle>
-<circle cx="96.6" cy="263.6" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Nassau: $1.7M, −11 pts</title></circle>
-<circle cx="98.2" cy="248.4" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Columbus: $1.8M, −5 pts</title></circle>
-<circle cx="208.7" cy="45.0" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Inverness: $6.7M, +78 pts</title></circle>
-<text x="216.7" y="49.0" text-anchor="start" font-size="15" fill="#16231B">Inverness</text>
-<circle cx="151.1" cy="134.0" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Oak Hill East: $4.1M, +42 pts</title></circle>
-<circle cx="217.7" cy="175.1" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Winged Foot West: $7.1M, +25 pts</title></circle>
-<circle cx="224.4" cy="253.3" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Scioto: $7.4M, −7 pts</title></circle>
-<circle cx="459.0" cy="317.9" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Baltusrol Lower: $17.8M, −33 pts</title></circle>
-<text x="469.0" y="321.9" text-anchor="start" font-size="15" fill="#16231B">Baltusrol Lower</text>
-<circle cx="430.5" cy="255.6" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Congressional Blue: $16.6M, −8 pts</title></circle>
-<text x="420.5" y="259.6" text-anchor="end" font-size="15" fill="#16231B">Congressional Blue</text>
-<circle cx="229.3" cy="311.9" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Bel-Air: $7.6M, −31 pts</title></circle>
-<text x="239.3" y="315.9" text-anchor="start" font-size="15" fill="#16231B">Bel-Air</text>
-<circle cx="226.8" cy="227.6" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Merion East: $7.5M, +4 pts</title></circle>
-<circle cx="172.3" cy="149.6" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Cape Fear: $5.1M, +35 pts</title></circle>
-</svg>
-    </div>
-    <div class="body">
-      <div class="stats">
-        <div><span class="num">+4</span><span class="what">Points vs. peers, big-name architects (median of 9); median spend $7.4M</span></div>
-        <div><span class="num">+11</span><span class="what">Points vs. peers, everyone else (median of 24); median spend $4.6M</span></div>
-      </div>
-      <p class="note">5 of 9 star projects reopened in the boom, so the fair test is within an era. Before 2020: +30 points (4 clubs) against +14 (16 clubs). In 2020-22: −7 (5) against +5 (8). The edge flips with the era, on very few clubs.</p>
-    </div>
-  </div>
-  <div class="takeaway"><span class="label">So what</span><span>Spending more did not reliably buy more revenue. At full, waitlisted clubs, a star architect&rsquo;s payoff more likely shows up in championships and in what a membership is worth.</span></div>
-  <div class="foot"><span>One club&rsquo;s spend could not be measured from its balance sheet. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">09 / 18</span></div>
-</section>
-
-<!-- 9 robustness -->
-<section class="slide" id="robust">
-  <div class="chrome label"><span class="sec"><b>10</b>How sure are we</span><span>Return on the Back Nine</span></div>
-  <h2>The timing split held in all 10 checks, but the gap is smaller than it was</h2>
-  <div class="chartbox">
-    <div class="legend"><span><i class="c1 dot"></i>Reopened before 2020</span><span><i class="c2 dot"></i>Reopened 2020-22</span><span>Right column: median of all clubs in the check</span></div>
-<div class="db-axis"><span></span><span class="tr"><span class="t" style="left:0.00%">−30</span><span class="t" style="left:33.33%">0</span><span class="t" style="left:66.67%">+30</span><span class="t" style="left:100.00%">+60</span></span><span class="h">All</span></div>
-<div class="db main" title="Main result: +20 vs. −2"><span class="nm">Main result</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
-<div class="db" title="Add back Southern Hills and Seminole, estimating their blank fee lines: +20 vs. −2"><span class="nm">Add back Southern Hills and Seminole, estimating their blank fee lines</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
-<div class="db" title="Drop the 4 clubs that hosted a pro event after reopening: +14 vs. −2"><span class="nm">Drop the 4 clubs that hosted a pro event after reopening</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:17.85%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:49.30%"></span></span><span class="v">+7</span></div>
-<div class="db" title="Total revenue, with one-time fees and assessments left in: +7 vs. +5"><span class="nm">Total revenue, with one-time fees and assessments left in</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:39.02%;width:2.26%"></span><span class="d c2" style="left:39.02%"></span><span class="d c1" style="left:41.28%"></span></span><span class="v">+5</span></div>
-<div class="db" title="Wider windows: three years before and three after: +16 vs. +4"><span class="nm">Wider windows: three years before and three after</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:38.06%;width:13.53%"></span><span class="d c2" style="left:38.06%"></span><span class="d c1" style="left:51.59%"></span></span><span class="v">+11</span></div>
-<div class="db" title="Fiscal years lined up with peers’ calendar years: +20 vs. −2"><span class="nm">Fiscal years lined up with peers’ calendar years</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
-<div class="db" title="Drop the phased projects (Cedar Rapids, Pelham, Columbus): +24 vs. −2"><span class="nm">Drop the phased projects (Cedar Rapids, Pelham, Columbus)</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.38%;width:28.17%"></span><span class="d c2" style="left:31.38%"></span><span class="d c1" style="left:59.55%"></span></span><span class="v">+15</span></div>
-<div class="db" title="The original clubs only: +48 vs. +2"><span class="nm">The original clubs only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:35.77%;width:50.36%"></span><span class="d c2" style="left:35.77%"></span><span class="d c1" style="left:86.13%"></span></span><span class="v">+22</span></div>
-<div class="db" title="The 8 clubs added in round two only: +7 vs. +4"><span class="nm">The 8 clubs added in round two only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:37.23%;width:4.10%"></span><span class="d c2" style="left:37.23%"></span><span class="d c1" style="left:41.33%"></span></span><span class="v">+5</span></div>
-<div class="db" title="The 15 clubs added in round three only: +18 vs. −5"><span class="nm">The 15 clubs added in round three only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:27.83%;width:25.24%"></span><span class="d c2" style="left:27.83%"></span><span class="d c1" style="left:53.07%"></span></span><span class="v">−2</span></div>
-  </div>
-  <div class="split even">
-    <p class="note">Dropping the 4 clubs that hosted a pro event after reopening cuts the overall median to +7 points, so tournaments likely help the top of the list. Total revenue pulls it to +5, mostly because some clubs collected contributions in the before years, which is why the study strips them out.</p>
-    <p class="note">A bootstrap (re-drawing the 33 clubs at random 20,000 times) puts a 95% range on the overall median of −5 to +25 points, which includes zero. For the pre-2020 group the range is −5 to +31 points, which now also includes zero.</p>
-  </div>
-  <details><summary>See the full robustness table</summary>
-    <div class="tablewrap"><table class="rob">
-      <thead><tr><th>Check</th><th class="n">Clubs</th><th class="n">Median (pts)</th><th class="n">Beat peers</th><th class="n">Pre-2020</th><th class="n">2020-22</th></tr></thead>
-      <tbody>
-<tr class="main"><td>Main result</td><td class="n">33</td><td class="n strong">+11</td><td class="n">19 of 33</td><td class="n">+20 <span class="yr">(20)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
-<tr><td>Add back Southern Hills and Seminole, estimating their blank fee lines</td><td class="n">35</td><td class="n strong">+11</td><td class="n">20 of 35</td><td class="n">+20 <span class="yr">(22)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
-<tr><td>Drop the 4 clubs that hosted a pro event after reopening</td><td class="n">29</td><td class="n strong">+7</td><td class="n">16 of 29</td><td class="n">+14 <span class="yr">(18)</span></td><td class="n">−2 <span class="yr">(11)</span></td></tr>
-<tr><td>Total revenue, with one-time fees and assessments left in<span class="note"> Swings come mostly from clubs collecting contributions in the before years.</span></td><td class="n">33</td><td class="n strong">+5</td><td class="n">19 of 33</td><td class="n">+7 <span class="yr">(20)</span></td><td class="n">+5 <span class="yr">(13)</span></td></tr>
-<tr><td>Wider windows: three years before and three after</td><td class="n">32</td><td class="n strong">+11</td><td class="n">19 of 32</td><td class="n">+16 <span class="yr">(19)</span></td><td class="n">+4 <span class="yr">(13)</span></td></tr>
-<tr><td>Fiscal years lined up with peers’ calendar years</td><td class="n">33</td><td class="n strong">+11</td><td class="n">19 of 33</td><td class="n">+20 <span class="yr">(20)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
-<tr><td>Drop the phased projects (Cedar Rapids, Pelham, Columbus)</td><td class="n">30</td><td class="n strong">+15</td><td class="n">19 of 30</td><td class="n">+24 <span class="yr">(18)</span></td><td class="n">−2 <span class="yr">(12)</span></td></tr>
-<tr><td>The original clubs only<span class="note"> 10 of the first 12 pass the fee-line rule.</span></td><td class="n">10</td><td class="n strong">+22</td><td class="n">7 of 10</td><td class="n">+48 <span class="yr">(4)</span></td><td class="n">+2 <span class="yr">(6)</span></td></tr>
-<tr><td>The 8 clubs added in round two only</td><td class="n">8</td><td class="n strong">+5</td><td class="n">5 of 8</td><td class="n">+7 <span class="yr">(7)</span></td><td class="n">+4 <span class="yr">(1)</span></td></tr>
-<tr><td>The 15 clubs added in round three only</td><td class="n">15</td><td class="n strong">−2</td><td class="n">7 of 15</td><td class="n">+18 <span class="yr">(9)</span></td><td class="n">−5 <span class="yr">(6)</span></td></tr>
-      </tbody>
-    </table></div>
-  </details>
-  <div class="foot"><span>Each row re-runs the whole study one different way. Club counts per group are in the full table.</span><span class="pg">10 / 18</span></div>
-</section>
-
-<!-- 10 board -->
-<section class="slide" id="board">
-  <div class="chrome label"><span class="sec"><b>11</b>The board&rsquo;s choice</span><span>Return on the Back Nine</span></div>
-  <h2>Assess, borrow or sell: who pays for the new course</h2>
-  <p class="dek">Most of these clubs are owned by their members. Since financing did not change the revenue result, the choice comes down to who pays and who carries the risk. Illustrative inputs; move them.</p>
-  <div class="model board">
-    <div class="inputs">
-      <div class="field">
-        <div class="row"><label for="b-cost">Project cost</label><output id="bo-cost" for="b-cost"></output></div>
-        <input type="range" id="b-cost" min="1" max="25" step="0.1" value="6.1">
-        <span class="hint">Study median $6.1M.</span>
-      </div>
-      <div class="field">
-        <div class="row"><label for="b-mem">Equity members</label><output id="bo-mem" for="b-mem"></output></div>
-        <input type="range" id="b-mem" min="150" max="1000" step="10" value="400">
-      </div>
-      <div class="field">
-        <div class="row"><label for="b-rate">Loan rate</label><output id="bo-rate" for="b-rate"></output></div>
-        <input type="range" id="b-rate" min="4" max="10" step="0.25" value="7">
-      </div>
-      <p class="hint">Held fixed: a 15-year loan in equal annual payments, split evenly across members; members value future payments at 5% a year.</p>
-    </div>
-    <div class="outputs" aria-live="polite">
-      <div class="results">
-        <div><span class="num accent" id="b-assess"></span><span class="what">One-time assessment per member</span></div>
-        <div><span class="num" id="b-year"></span><span class="what">Loan cost per member per year, 15 years</span></div>
-        <div><span class="num" id="b-total"></span><span class="what">Loan cost per member, all 15 years</span></div>
-        <div><span class="num" id="b-even"></span><span class="what">Years a member must stay for the loan to cost more</span></div>
-      </div>
-      <div>
-        <p class="figtitle" style="margin-bottom:6px">Cost per member in today&rsquo;s dollars, by years the member stays</p>
-        <div class="legend" style="margin-bottom:4px"><span><i class="c1"></i>Assessment</span><span><i class="c2"></i>Loan</span></div>
-        <div id="b-chart"></div>
-      </div>
-    </div>
-  </div>
-  <div class="tablewrap"><table class="opts">
-    <thead><tr><th>Option</th><th>What each member pays</th><th>Who carries the risk</th><th>Fits best when</th></tr></thead>
-    <tbody>
-      <tr><td><b>Assess</b></td><td id="b-t1" data-l="Each member pays"></td><td data-l="Risk">Today&rsquo;s members. Some may resign rather than pay, which hurts most at a club without a waitlist.</td><td data-l="Fits when">The club is full and members plan to stay.</td></tr>
-      <tr><td><b>Borrow</b></td><td id="b-t2" data-l="Each member pays"></td><td data-l="Risk">Future members share the bill. The club takes on a lender, covenants and rate risk.</td><td data-l="Fits when">Members turn over, or the club wants to spread the cost.</td></tr>
-      <tr><td><b>Sell to an operator</b></td><td id="b-t3" data-l="Each member pays"></td><td data-l="Risk">The buyer. Members give up ownership and say over dues.</td><td data-l="Fits when">The club cannot fund the project or carry the debt.</td></tr>
-    </tbody>
-  </table></div>
-  <div class="takeaway"><span class="label">So what</span><span id="b-verdict"></span></div>
-  <div class="foot"><span>Illustrative. Break-even compares the assessment with the loan payments a member would make, discounted at 5% a year.</span><span class="pg">11 / 18</span></div>
-</section>
-
-<!-- 11 credit -->
-<section class="slide" id="credit">
-  <div class="chrome label"><span class="sec"><b>12</b>Credit view</span><span>Return on the Back Nine</span></div>
-  <h2>Renovated clubs carry a little more debt than peers</h2>
-  <div class="split even">
-    <div class="chartbox">
-      <p class="figtitle">Median debt to assets</p>
-      <div class="hbars">
-        <div class="hb" title="Renovated clubs: 18%"><span class="nm">Renovated</span><span class="tr"><span class="bar" style="left:0;width:36.0%"></span></span><span class="v">18%</span></div>
-        <div class="hb" title="Comparison clubs: 16%"><span class="nm">Comparison</span><span class="tr"><span class="bar c2" style="left:0;width:32.0%"></span></span><span class="v">16%</span></div>
-      </div>
-      <p class="figtitle" style="margin-top:10px">Median debt to one year of revenue</p>
-      <div class="hbars">
-        <div class="hb" title="Renovated clubs: 0.35x"><span class="nm">Renovated</span><span class="tr"><span class="bar" style="left:0;width:35.0%"></span></span><span class="v">0.35x</span></div>
-        <div class="hb" title="Comparison clubs: 0.25x"><span class="nm">Comparison</span><span class="tr"><span class="bar c2" style="left:0;width:25.0%"></span></span><span class="v">0.25x</span></div>
-      </div>
-    </div>
-    <div class="body">
-      <div class="stats">
-        <div><span class="num">4 of 56</span><span class="what">Clubs with debt above a full year of revenue; the highest is 2.01x</span></div>
-      </div>
-      <ul class="pts">
-        <li>Debt here is what the club borrowed: secured mortgages and notes plus unsecured loans (Form 990 Part X, lines 23 and 24). Payables and deferred dues are left out.</li>
-        <li>Borrowing is about 56% of total liabilities at the typical club. On total liabilities the gap looked wider: 36% of assets for renovated clubs against 29% for peers.</li>
-        <li>5 clubs report no debt at all. Part of the gap is clubhouse projects running at the same time.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="takeaway"><span class="label">So what</span><span>A lender reads both ratios: how much of the club is owed, and how many years of revenue the obligations equal. Club names are left out of this slide on purpose.</span></div>
-  <div class="foot"><span>Latest e-filed Form 990 for each club, fiscal 2024 to 2026; 56 clubs, including the two used only in the robustness check.</span><span class="pg">12 / 18</span></div>
+<section class="slide" id="opmodel">
+  <div class="chrome label"><span class="sec"><b>08</b>Operating model</span><span>Return on the Back Nine</span></div>
+  <h2>At the median lift, the renovation adds $0.61M of year-7 EBITDA for $6.1M up front</h2>
+  <p class="dek">Seven-year projection for the typical club, all cash, renovating at the study&rsquo;s median lift of 8.2% against not renovating. Revenue dips 5% while the course is closed; half the lift arrives in year 2 and all of it from year 3.</p>
+  <div class="tablewrap"><table class="opm"><thead><tr><th>$M, fiscal year</th><th class="n">Close</th><th class="n">Y1</th><th class="n">Y2</th><th class="n">Y3</th><th class="n">Y4</th><th class="n">Y5</th><th class="n">Y6</th><th class="n">Y7</th></tr></thead><tbody><tr class=""><td>Revenue, renovating</td><td class="n">12.1</td><td class="n">11.8</td><td class="n">13.4</td><td class="n">14.3</td><td class="n">14.7</td><td class="n">15.2</td><td class="n">15.6</td><td class="n">16.1</td></tr><tr class="sub"><td>Revenue, not renovating</td><td class="n">12.1</td><td class="n">12.5</td><td class="n">12.8</td><td class="n">13.2</td><td class="n">13.6</td><td class="n">14.0</td><td class="n">14.4</td><td class="n">14.9</td></tr><tr class="strong"><td>EBITDA, renovating</td><td class="n">1.8</td><td class="n">1.6</td><td class="n">2.4</td><td class="n">3.1</td><td class="n">3.3</td><td class="n">3.4</td><td class="n">3.5</td><td class="n">3.6</td></tr><tr class="sub"><td>EBITDA margin</td><td class="n">15%</td><td class="n">13%</td><td class="n">18%</td><td class="n">21%</td><td class="n">22%</td><td class="n">22%</td><td class="n">22%</td><td class="n">22%</td></tr><tr class=""><td>Maintenance capex</td><td class="n"></td><td class="n">−0.5</td><td class="n">−0.5</td><td class="n">−0.6</td><td class="n">−0.6</td><td class="n">−0.6</td><td class="n">−0.6</td><td class="n">−0.6</td></tr><tr class=""><td>Renovation</td><td class="n"></td><td class="n">−6.1</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n"></td></tr><tr class=""><td>Taxes</td><td class="n"></td><td class="n">−0.2</td><td class="n">−0.4</td><td class="n">−0.5</td><td class="n">−0.6</td><td class="n">−0.6</td><td class="n">−0.6</td><td class="n">−0.6</td></tr><tr class="strong"><td>Free cash flow, renovating</td><td class="n"></td><td class="n">−5.2</td><td class="n">1.5</td><td class="n">2.0</td><td class="n">2.1</td><td class="n">2.2</td><td class="n">2.2</td><td class="n">2.3</td></tr><tr class="sub"><td>Free cash flow, not renovating</td><td class="n"></td><td class="n">1.0</td><td class="n">1.3</td><td class="n">1.5</td><td class="n">1.6</td><td class="n">1.7</td><td class="n">1.7</td><td class="n">1.8</td></tr><tr class="sub"><td>EBITDA, not renovating</td><td class="n">1.8</td><td class="n">1.9</td><td class="n">2.2</td><td class="n">2.5</td><td class="n">2.7</td><td class="n">2.8</td><td class="n">2.9</td><td class="n">3.0</td></tr></tbody></table></div>
+  <ul class="pts">
+    <li>Free cash flow over seven years: $7.2M renovating against $10.6M not renovating. The renovation pays back through a higher exit, not through cash along the way.</li>
+    <li>Year-7 EBITDA of $3.59M against $2.98M; at 8x, that gap is the $4.9M of added value on slide 4.</li>
+  </ul>
+  <div class="takeaway"><span class="label">So what</span><span>The project is a bet on exit value. It needs a bigger lift than the median club got to pay for itself.</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Base revenue grows 3% a year; base EBITDA margin rises from 15% to 20% by year 4; half of added revenue reaches EBITDA; maintenance capex 4% of revenue; 25% tax; 15-year depreciation on the renovation.</span><span class="pg">08 / 22</span></div>
 </section>
 
 <!-- 12 deal -->
 <section class="slide" id="deal">
-  <div class="chrome label"><span class="sec"><b>13</b>Run the deal</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>09</b>Returns &middot; All cash</span><span>Return on the Back Nine</span></div>
   <h2>A buyer needs a lift of about 18% for the renovation to keep up with the deal</h2>
-  <p class="dek">An illustrative club sized like the study&rsquo;s: $12.1M of core member revenue, club debt paid off at close plus $2.0M to members, a renovation in year one and a sale in year seven. All cash, the way Concert buys. Slide 14 runs the same deal as an LBO.</p>
+  <p class="dek">An illustrative club sized like the study&rsquo;s: $12.1M of core member revenue, club debt paid off at close plus $2.0M to members, a renovation in year one and a sale in year seven. All cash, the way Concert buys. Slide 10 runs the same deal as an LBO.</p>
   <div class="model">
     <div class="inputs">
       <div class="field">
@@ -854,20 +596,20 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>At the median lift the renovation earns about 4% on its own and pulls the deal from 20% to 17%. It needs about 18% to keep up and 11% just to earn 10%. First diligence question: does the club have room to take members from rivals, or is it full with a waitlist?</span></div>
-  <div class="foot"><span>Illustrative model, not investment advice. The no-renovation case assumes the course holds its appeal with no investment, which flatters it.</span><span class="pg">13 / 18</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. The no-renovation case assumes the course holds its appeal with no investment, which flatters it.</span><span class="pg">09 / 22</span></div>
 </section>
 
 <!-- 13 lbo -->
 <section class="slide" id="lbo">
-  <div class="chrome label"><span class="sec"><b>14</b>LBO</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>10</b>Returns &middot; LBO</span><span>Return on the Back Nine</span></div>
   <h2>As an LBO, debt lifts the buyer&rsquo;s return and raises the bar for the renovation</h2>
-  <p class="dek">The same deal as slide 13, financed with a term loan sized off EBITDA at close. All free cash flow pays down the loan (a cash sweep), and the buyer&rsquo;s equity pays for the renovation in year one. It uses the outcome and inputs set on slide 13.</p>
+  <p class="dek">The same deal as slide 9, financed with a term loan sized off EBITDA at close. All free cash flow pays down the loan (a cash sweep), and the buyer&rsquo;s equity pays for the renovation in year one. It uses the outcome and inputs set on slide 9.</p>
   <div class="model">
     <div class="inputs">
       <div class="field">
         <div class="row"><label for="l-lev">Term loan (x EBITDA at close)</label><output id="lo-lev" for="l-lev"></output></div>
         <input type="range" id="l-lev" min="0" max="5" step="0.25" value="3">
-        <span class="hint">0x turns this back into the all-cash deal on slide 13.</span>
+        <span class="hint">0x turns this back into the all-cash deal on slide 9.</span>
       </div>
       <div class="field">
         <div class="row"><label for="l-rate">Interest rate</label><output id="lo-rate" for="l-rate"></output></div>
@@ -900,14 +642,32 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>At 3x the median outcome earns 19% for the equity against 17% all cash. But debt lifts the no-renovation case even more, to 25%, so the lift the renovation needs to keep up rises from about 18% to about 21%. Leverage magnifies the baseline, so a so-so project looks worse next to it.</span></div>
-  <div class="foot"><span>Illustrative model, not investment advice. Term loan at the rate shown, 100% cash sweep, repaid at exit; interest is tax-deductible. Other assumptions as on slide 13.</span><span class="pg">14 / 18</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Term loan at the rate shown, 100% cash sweep, repaid at exit; interest is tax-deductible. Other assumptions as on slide 9.</span><span class="pg">10 / 22</span></div>
+</section>
+
+<section class="slide" id="sens">
+  <div class="chrome label"><span class="sec"><b>11</b>Sensitivities</span><span>Return on the Back Nine</span></div>
+  <h2>At 3x leverage, renovating beats not renovating only above about a 21% lift</h2>
+  <p class="dek">Equity IRR for the same LBO across outcomes. Green cells beat the same deal without renovating. The lift and the exit multiple drive the return; the interest rate barely moves it.</p>
+  <div class="split even">
+    <div class="chartbox">
+      <p class="figtitle">Equity IRR at 3x: revenue lift by exit multiple</p>
+<table class="sens"><thead><tr><th>Revenue lift</th><th class="n">Exit 7x</th><th class="n">Exit 8x</th><th class="n">Exit 9x</th></tr></thead><tbody><tr><td>No lift</td><td class="n">12%</td><td class="n">14%</td><td class="n">16%</td></tr><tr><td>5%</td><td class="n">15%</td><td class="n">17%</td><td class="n">19%</td></tr><tr><td>8% (study median)</td><td class="n">17%</td><td class="n">19%</td><td class="n">20%</td></tr><tr><td>17% (pre-2020 median)</td><td class="n">21%</td><td class="n">23%</td><td class="n">25%</td></tr><tr><td>25%</td><td class="n win">24%</td><td class="n win">26%</td><td class="n win">28%</td></tr><tr class="sub"><td>Not renovating</td><td class="n">23%</td><td class="n">25%</td><td class="n">26%</td></tr></tbody></table>
+    </div>
+    <div class="chartbox">
+      <p class="figtitle">Equity IRR at the median lift, by leverage and rate (renovating vs. not)</p>
+<table class="sens"><thead><tr><th>Leverage</th><th class="n">Rate 6%</th><th class="n">Rate 8%</th><th class="n">Rate 10%</th></tr></thead><tbody><tr><td>All cash</td><td class="n">17% <small>vs. 20%</small></td><td class="n">17% <small>vs. 20%</small></td><td class="n">17% <small>vs. 20%</small></td></tr><tr><td>2x EBITDA</td><td class="n">18% <small>vs. 22%</small></td><td class="n">18% <small>vs. 22%</small></td><td class="n">17% <small>vs. 22%</small></td></tr><tr><td>3x EBITDA</td><td class="n">19% <small>vs. 25%</small></td><td class="n">19% <small>vs. 25%</small></td><td class="n">18% <small>vs. 24%</small></td></tr><tr><td>4x EBITDA</td><td class="n">21% <small>vs. 29%</small></td><td class="n">20% <small>vs. 29%</small></td><td class="n">20% <small>vs. 28%</small></td></tr></tbody></table>
+    </div>
+  </div>
+  <div class="takeaway"><span class="label">So what</span><span>Going from all cash to 4x adds about 4 points to the renovating case and 8 to the no-renovation case. Debt raises the bar for the project; a buyer should size it to the base case.</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Term loan sized off year-0 EBITDA, full cash sweep, repaid at exit. Other inputs as on slide 9.</span><span class="pg">11 / 22</span></div>
 </section>
 
 <!-- roll-up -->
 <section class="slide" id="rollup">
-  <div class="chrome label"><span class="sec"><b>15</b>Roll-up</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>12</b>Roll-up</span><span>Return on the Back Nine</span></div>
   <h2>For a buyer of several clubs, picking ones with room to grow is worth about 6 points a year</h2>
-  <p class="dek">Two illustrative portfolios. Each buys four clubs sized like the study&rsquo;s at 3x leverage, renovates them in year one and sells all four at 8x in year seven, using the inputs from slide 14. The only difference is the revenue lift: one draws on outcomes from clubs that reopened before 2020, when clubs had room to win members; the other on 2020-22, when clubs were full.</p>
+  <p class="dek">Two illustrative portfolios. Each buys four clubs sized like the study&rsquo;s at 3x leverage, renovates them in year one and sells all four at 8x in year seven, using the inputs from slide 10. The only difference is the revenue lift: one draws on outcomes from clubs that reopened before 2020, when clubs had room to win members; the other on 2020-22, when clubs were full.</p>
   <div class="split even">
     <div class="chartbox">
       <p class="figtitle">Portfolio equity IRR</p>
@@ -937,12 +697,363 @@ table.opts td:first-child { white-space: nowrap; }
     </div>
   </div>
   <div class="takeaway"><span class="label">So what</span><span>The screen comes before the shovel. A buyer should look for clubs that can still take members from rivals, not full clubs with a waitlist, and treat the renovation as defense as much as upside.</span></div>
-  <div class="foot"><span>Illustrative model, not investment advice. Each club&rsquo;s lift is the 20th, 40th, 60th or 80th percentile of the study&rsquo;s results in that era. Equity in: $24.7M at close plus $22.0M for the renovations. Other assumptions as on slides 13 and 14.</span><span class="pg">15 / 18</span></div>
+  <div class="foot"><span>Illustrative model, not investment advice. Each club&rsquo;s lift is the 20th, 40th, 60th or 80th percentile of the study&rsquo;s results in that era. Equity in: $24.7M at close plus $22.0M for the renovations. Other assumptions as on slides 9 and 10.</span><span class="pg">12 / 22</span></div>
+</section>
+
+<!-- 11 credit -->
+<section class="slide" id="credit">
+  <div class="chrome label"><span class="sec"><b>13</b>Credit</span><span>Return on the Back Nine</span></div>
+  <h2>Renovated clubs carry a little more debt than peers</h2>
+  <div class="split even">
+    <div class="chartbox">
+      <p class="figtitle">Median debt to assets</p>
+      <div class="hbars">
+        <div class="hb" title="Renovated clubs: 18%"><span class="nm">Renovated</span><span class="tr"><span class="bar" style="left:0;width:36.0%"></span></span><span class="v">18%</span></div>
+        <div class="hb" title="Comparison clubs: 16%"><span class="nm">Comparison</span><span class="tr"><span class="bar c2" style="left:0;width:32.0%"></span></span><span class="v">16%</span></div>
+      </div>
+      <p class="figtitle" style="margin-top:10px">Median debt to one year of revenue</p>
+      <div class="hbars">
+        <div class="hb" title="Renovated clubs: 0.35x"><span class="nm">Renovated</span><span class="tr"><span class="bar" style="left:0;width:35.0%"></span></span><span class="v">0.35x</span></div>
+        <div class="hb" title="Comparison clubs: 0.25x"><span class="nm">Comparison</span><span class="tr"><span class="bar c2" style="left:0;width:25.0%"></span></span><span class="v">0.25x</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="stats">
+        <div><span class="num">4 of 56</span><span class="what">Clubs with debt above a full year of revenue; the highest is 2.01x</span></div>
+      </div>
+      <ul class="pts">
+        <li>Debt here is what the club borrowed: secured mortgages and notes plus unsecured loans (Form 990 Part X, lines 23 and 24). Payables and deferred dues are left out.</li>
+        <li>Borrowing is about 56% of total liabilities at the typical club. On total liabilities the gap looked wider: 36% of assets for renovated clubs against 29% for peers.</li>
+        <li>5 clubs report no debt at all. Part of the gap is clubhouse projects running at the same time.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="takeaway"><span class="label">So what</span><span>A lender reads both ratios: how much of the club is owed, and how many years of revenue the obligations equal. Club names are left out of this slide on purpose.</span></div>
+  <div class="foot"><span>Latest e-filed Form 990 for each club, fiscal 2024 to 2026; 56 clubs, including the two used only in the robustness check.</span><span class="pg">13 / 22</span></div>
+</section>
+
+<section class="slide" id="financing">
+  <div class="chrome label"><span class="sec"><b>14</b>Financing the project</span><span>Return on the Back Nine</span></div>
+  <h2>How a club paid for the course did not predict the revenue lift</h2>
+  <p class="dek">Clubs fund a renovation by borrowing, assessing members or spending cash. For a buyer, that history matters for the balance sheet it inherits, not for the lift it can expect.</p>
+  <div class="split even">
+    <div class="chartbox">
+      <p class="figtitle">Median revenue uplift vs. peers, by how the renovation was paid for</p>
+<div class="hbars">
+<div class="hb" title="Mostly borrowed: +9%"><span class="nm">Mostly borrowed<small>14 clubs</small></span><span class="tr"><span class="zero" style="left:50.00%"></span><span class="bar " style="left:50.00%;width:14.53%"></span></span><span class="v">+9%</span></div>
+<div class="hb" title="Mix of debt and cash: +9%"><span class="nm">Mix of debt and cash<small>4 clubs</small></span><span class="tr"><span class="zero" style="left:50.00%"></span><span class="bar " style="left:50.00%;width:15.19%"></span></span><span class="v">+9%</span></div>
+<div class="hb" title="Member contributions: +23%"><span class="nm">Member contributions<small>4 clubs</small></span><span class="tr"><span class="zero" style="left:50.00%"></span><span class="bar " style="left:50.00%;width:39.11%"></span></span><span class="v">+23%</span></div>
+<div class="hb" title="Cash: −7%"><span class="nm">Cash<small>5 clubs</small></span><span class="tr"><span class="zero" style="left:50.00%"></span><span class="bar  neg" style="left:37.97%;width:12.03%"></span></span><span class="v">−7%</span></div>
+</div>
+      <p class="note">Grey bars have fewer than four clubs, so treat them as anecdotes.</p>
+    </div>
+    <div class="chartbox">
+      <p class="figtitle">Within an era, the edge flips</p>
+      <div class="legend"><span><i class="c1 dot"></i>Mostly borrowed</span><span><i class="c2 dot"></i>Everyone else</span></div>
+<div class="db-axis"><span></span><span class="tr"><span class="t" style="left:0.00%">−10%</span><span class="t" style="left:25.00%">0%</span><span class="t" style="left:50.00%">+10%</span><span class="t" style="left:75.00%">+20%</span><span class="t" style="left:100.00%">+30%</span></span><span class="h">uplift</span></div>
+<div class="db" title="Reopened before 2020: +12 vs. +19"><span class="nm">Reopened before 2020</span><span class="tr"><span class="zero" style="left:25.00%"></span><span class="ln" style="left:55.05%;width:18.56%"></span><span class="d c2" style="left:73.61%"></span><span class="d c1" style="left:55.05%"></span></span><span class="v">+12% / +19%</span></div>
+<div class="db" title="Reopened 2020-22: +5 vs. −3"><span class="nm">Reopened 2020-22</span><span class="tr"><span class="zero" style="left:25.00%"></span><span class="ln" style="left:17.83%;width:20.57%"></span><span class="d c2" style="left:17.83%"></span><span class="d c1" style="left:38.40%"></span></span><span class="v">+5% / −3%</span></div>
+      <p class="note">Borrowers looked better overall (+9% vs. −1%). Within an era they did worse before 2020 (+12% vs. +19%) and better in 2020-22 (+5% vs. −3%, on 4 and 6 clubs). No steady pattern.</p>
+    </div>
+  </div>
+  <div class="takeaway"><span class="label">So what</span><span>Financing decides who pays and who carries the risk, not the return. That is the board&rsquo;s question on slide 15.</span></div>
+  <details><summary>See spend and borrowing for each club</summary>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Club</th><th class="n">Reopened (FY)</th><th class="n">Spend ($M)</th><th class="n">Borrowed ($M)</th><th>How it was paid</th><th class="n">Uplift vs. peers</th></tr></thead>
+      <tbody>
+<tr><td>Northwood Club</td><td class="n">2018</td><td class="n">22.9</td><td class="n">11.3</td><td>Member contributions</td><td class="n">+34%</td></tr>
+<tr><td>Baltusrol GC (Lower)</td><td class="n">2022</td><td class="n">17.8</td><td class="n">0.9</td><td>Cash</td><td class="n">−21%</td></tr>
+<tr><td>Congressional CC (Blue)</td><td class="n">2021</td><td class="n">16.6</td><td class="n">11.9</td><td>Mostly borrowed</td><td class="n">−5%</td></tr>
+<tr><td>Diablo CC</td><td class="n">2020</td><td class="n">11.6</td><td class="n">13.0</td><td>Mostly borrowed</td><td class="n">+8%</td></tr>
+<tr><td>CC of Orlando</td><td class="n">2018</td><td class="n">10.4</td><td class="n">9.6</td><td>Mostly borrowed</td><td class="n">−15%</td></tr>
+<tr><td>Biltmore Forest CC</td><td class="n">2015</td><td class="n">8.8</td><td class="n">6.5</td><td>Mostly borrowed</td><td class="n">−4%</td></tr>
+<tr><td>Vestavia CC</td><td class="n">2018</td><td class="n">7.8</td><td class="n">7.0</td><td>Mostly borrowed</td><td class="n">+33%</td></tr>
+<tr><td>Bel-Air CC</td><td class="n">2019</td><td class="n">7.6</td><td class="n">4.6</td><td>Member contributions</td><td class="n">−24%</td></tr>
+<tr><td>Merion GC (East)</td><td class="n">2020</td><td class="n">7.5</td><td class="n">4.9</td><td>Mostly borrowed</td><td class="n">+3%</td></tr>
+<tr><td>Scioto CC</td><td class="n">2022</td><td class="n">7.4</td><td class="n">4.1</td><td>Mix of debt and cash</td><td class="n">−5%</td></tr>
+<tr><td>Winged Foot GC (West)</td><td class="n">2017</td><td class="n">7.1</td><td class="n">2.6</td><td>Mix of debt and cash</td><td class="n">+21%</td></tr>
+<tr><td>Inverness Club</td><td class="n">2018</td><td class="n">6.7</td><td class="n">6.2</td><td>Mostly borrowed</td><td class="n">+65%</td></tr>
+<tr><td>Meadowbrook CC</td><td class="n">2017</td><td class="n">6.4</td><td class="n">5.1</td><td>Mostly borrowed</td><td class="n">+9%</td></tr>
+<tr><td>Pelham CC</td><td class="n">2020</td><td class="n">6.1</td><td class="n">2.8</td><td>Mix of debt and cash</td><td class="n">−1%</td></tr>
+<tr><td>Troon CC</td><td class="n">2021</td><td class="n">5.3</td><td class="n">1.0</td><td>Member contributions</td><td class="n">+93%</td></tr>
+<tr><td>Moraine CC</td><td class="n">2016</td><td class="n">5.3</td><td class="n">2.3</td><td>Mix of debt and cash</td><td class="n">+19%</td></tr>
+<tr><td>Cape Fear CC</td><td class="n">2019</td><td class="n">5.1</td><td class="n">3.2</td><td>Mostly borrowed</td><td class="n">+28%</td></tr>
+<tr><td>Oak Hill CC (East)</td><td class="n">2020</td><td class="n">4.1</td><td class="n">2.6</td><td>Mostly borrowed</td><td class="n">+30%</td></tr>
+<tr><td>Druid Hills GC</td><td class="n">2017</td><td class="n">3.9</td><td class="n">0.2</td><td>Cash</td><td class="n">+45%</td></tr>
+<tr><td>Contra Costa CC</td><td class="n">2015</td><td class="n">2.9</td><td class="n">2.8</td><td>Mostly borrowed</td><td class="n">+23%</td></tr>
+<tr><td>Fox Chapel GC</td><td class="n">2021</td><td class="n">2.6</td><td class="n">−0.3</td><td>Member contributions</td><td class="n">+13%</td></tr>
+<tr><td>Baltimore CC (East)</td><td class="n">2016</td><td class="n">1.9</td><td class="n">1.2</td><td>Mostly borrowed</td><td class="n">+6%</td></tr>
+<tr><td>Columbus CC</td><td class="n">2018</td><td class="n">1.8</td><td class="n">1.9</td><td>Mostly borrowed</td><td class="n">−4%</td></tr>
+<tr><td>Nassau CC</td><td class="n">2022</td><td class="n">1.7</td><td class="n">−0.7</td><td>Cash</td><td class="n">−7%</td></tr>
+<tr><td>Stanwich Club</td><td class="n">2018</td><td class="n">1.5</td><td class="n">−0.2</td><td>Cash</td><td class="n">−7%</td></tr>
+<tr><td>Sara Bay CC</td><td class="n">2018</td><td class="n">1.2</td><td class="n">0.9</td><td>Mostly borrowed</td><td class="n">+15%</td></tr>
+<tr><td>Cedar Rapids CC</td><td class="n">2017</td><td class="n">0.6</td><td class="n">−1.1</td><td>Cash</td><td class="n">−20%</td></tr>
+<tr><td>Birmingham CC (Mich.)</td><td class="n">2016</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+37%</td></tr>
+<tr><td>Olympia Fields CC (North)</td><td class="n">2016</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−10%</td></tr>
+<tr><td>Woodmont CC (North)</td><td class="n">2020</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−10%</td></tr>
+<tr><td>Chickasaw CC</td><td class="n">2018</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+22%</td></tr>
+<tr><td>Kenwood CC (Kendale)</td><td class="n">2021</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">+20%</td></tr>
+<tr><td>El Caballero CC</td><td class="n">2022</td><td class="n">n/a</td><td class="n">n/a</td><td>Not measurable</td><td class="n">−5%</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+  <div class="foot"><span>Mostly borrowed: liabilities rose by at least 60% of spend. Member contributions: the initiation line ran 1.4x normal during construction. Spend ran $0.6M to $22.9M, median $6.1M. Baltusrol paid cash (GOLF.com).</span><span class="pg">14 / 22</span></div>
+</section>
+
+<!-- 10 board -->
+<section class="slide" id="board">
+  <div class="chrome label"><span class="sec"><b>15</b>Financing &middot; The board&rsquo;s choice</span><span>Return on the Back Nine</span></div>
+  <h2>Assess, borrow or sell: who pays for the new course</h2>
+  <p class="dek">Most of these clubs are owned by their members. Since financing did not change the revenue result, the choice comes down to who pays and who carries the risk. Illustrative inputs; move them.</p>
+  <div class="model board">
+    <div class="inputs">
+      <div class="field">
+        <div class="row"><label for="b-cost">Project cost</label><output id="bo-cost" for="b-cost"></output></div>
+        <input type="range" id="b-cost" min="1" max="25" step="0.1" value="6.1">
+        <span class="hint">Study median $6.1M.</span>
+      </div>
+      <div class="field">
+        <div class="row"><label for="b-mem">Equity members</label><output id="bo-mem" for="b-mem"></output></div>
+        <input type="range" id="b-mem" min="150" max="1000" step="10" value="400">
+      </div>
+      <div class="field">
+        <div class="row"><label for="b-rate">Loan rate</label><output id="bo-rate" for="b-rate"></output></div>
+        <input type="range" id="b-rate" min="4" max="10" step="0.25" value="7">
+      </div>
+      <p class="hint">Held fixed: a 15-year loan in equal annual payments, split evenly across members; members value future payments at 5% a year.</p>
+    </div>
+    <div class="outputs" aria-live="polite">
+      <div class="results">
+        <div><span class="num accent" id="b-assess"></span><span class="what">One-time assessment per member</span></div>
+        <div><span class="num" id="b-year"></span><span class="what">Loan cost per member per year, 15 years</span></div>
+        <div><span class="num" id="b-total"></span><span class="what">Loan cost per member, all 15 years</span></div>
+        <div><span class="num" id="b-even"></span><span class="what">Years a member must stay for the loan to cost more</span></div>
+      </div>
+      <div>
+        <p class="figtitle" style="margin-bottom:6px">Cost per member in today&rsquo;s dollars, by years the member stays</p>
+        <div class="legend" style="margin-bottom:4px"><span><i class="c1"></i>Assessment</span><span><i class="c2"></i>Loan</span></div>
+        <div id="b-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tablewrap"><table class="opts">
+    <thead><tr><th>Option</th><th>What each member pays</th><th>Who carries the risk</th><th>Fits best when</th></tr></thead>
+    <tbody>
+      <tr><td><b>Assess</b></td><td id="b-t1" data-l="Each member pays"></td><td data-l="Risk">Today&rsquo;s members. Some may resign rather than pay, which hurts most at a club without a waitlist.</td><td data-l="Fits when">The club is full and members plan to stay.</td></tr>
+      <tr><td><b>Borrow</b></td><td id="b-t2" data-l="Each member pays"></td><td data-l="Risk">Future members share the bill. The club takes on a lender, covenants and rate risk.</td><td data-l="Fits when">Members turn over, or the club wants to spread the cost.</td></tr>
+      <tr><td><b>Sell to an operator</b></td><td id="b-t3" data-l="Each member pays"></td><td data-l="Risk">The buyer. Members give up ownership and say over dues.</td><td data-l="Fits when">The club cannot fund the project or carry the debt.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="takeaway"><span class="label">So what</span><span id="b-verdict"></span></div>
+  <div class="foot"><span>Illustrative. Break-even compares the assessment with the loan payments a member would make, discounted at 5% a year.</span><span class="pg">15 / 22</span></div>
+</section>
+
+<!-- 8 architects -->
+<section class="slide" id="architects">
+  <div class="chrome label"><span class="sec"><b>16</b>Capex discipline</span><span>Return on the Back Nine</span></div>
+  <h2>Big-name architects cost about 1.6x as much, with no steady revenue premium</h2>
+  <p class="dek">The renovation budget is the buyer&rsquo;s biggest controllable cost. Projects led by the best-known architects of this era spent a median $7.4M against $4.6M for everyone else.</p>
+  <div class="split">
+    <div class="chartbox">
+      <p class="figtitle">Spend vs. result, 27 clubs with measurable spend</p>
+      <div class="legend"><span><i class="c1 dot"></i>Hanse, Green, Coore &amp; Crenshaw, Doak</span><span><i class="ring"></i>Everyone else</span></div>
+<svg viewBox="0 0 640 380" width="100%" role="img" aria-label="Scatter of renovation spend against revenue uplift versus peers; no clear pattern, and big-name projects are spread across the range">
+<line x1="58" x2="620" y1="334.0" y2="334.0" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="339.0" text-anchor="end" font-size="15" fill="#4A584F">−30%</text>
+<line x1="58" x2="620" y1="228.0" y2="228.0" stroke="#16231B" stroke-width="1.5"/><text x="50" y="233.0" text-anchor="end" font-size="15" fill="#4A584F">0%</text>
+<line x1="58" x2="620" y1="122.0" y2="122.0" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="127.0" text-anchor="end" font-size="15" fill="#4A584F">+30%</text>
+<line x1="58" x2="620" y1="16.0" y2="16.0" stroke="#DDE3D9" stroke-width="1"/><text x="50" y="21.0" text-anchor="end" font-size="15" fill="#4A584F">+60%</text>
+<text x="58.0" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$0M</text>
+<text x="170.4" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$5M</text>
+<text x="282.8" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$10M</text>
+<text x="395.2" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$15M</text>
+<text x="507.6" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$20M</text>
+<text x="620.0" y="356" text-anchor="middle" font-size="15" fill="#4A584F">$25M</text>
+<text x="620" y="374" text-anchor="end" font-size="14" fill="#4A584F" letter-spacing="1">SPEND ON THE PROJECT &rarr;</text>
+<text x="58" y="14" font-size="14" fill="#4A584F" letter-spacing="1">REVENUE VS. PEER PATH</text>
+<circle cx="146.0" cy="67.7" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Druid Hills: $3.9M, +45% vs. peer path</title></circle>
+<text x="154.0" y="71.7" text-anchor="start" font-size="15" fill="#16231B">Druid Hills</text>
+<circle cx="319.6" cy="199.0" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Diablo: $11.6M, +8% vs. peer path</title></circle>
+<circle cx="116.6" cy="183.4" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Fox Chapel: $2.6M, +13% vs. peer path</title></circle>
+<circle cx="572.9" cy="106.8" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Northwood: $22.9M, +34% vs. peer path</title></circle>
+<text x="562.9" y="110.8" text-anchor="end" font-size="15" fill="#16231B">Northwood</text>
+<circle cx="72.0" cy="297.1" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Cedar Rapids: $0.6M, −20% vs. peer path</title></circle>
+<text x="82.0" y="301.1" text-anchor="start" font-size="15" fill="#16231B">Cedar Rapids</text>
+<circle cx="201.1" cy="195.4" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Meadowbrook: $6.4M, +9% vs. peer path</title></circle>
+<circle cx="100.5" cy="205.7" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Baltimore CC East: $1.9M, +6% vs. peer path</title></circle>
+<circle cx="256.0" cy="241.3" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Biltmore Forest: $8.8M, −4% vs. peer path</title></circle>
+<circle cx="124.1" cy="145.5" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Contra Costa: $2.9M, +23% vs. peer path</title></circle>
+<circle cx="177.0" cy="159.3" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Moraine: $5.3M, +19% vs. peer path</title></circle>
+<circle cx="84.3" cy="175.7" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Sara Bay: $1.2M, +15% vs. peer path</title></circle>
+<circle cx="232.6" cy="110.0" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Vestavia: $7.8M, +33% vs. peer path</title></circle>
+<circle cx="177.1" cy="16.0" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Troon: $5.3M, +93% vs. peer path</title></circle>
+<text x="187.1" y="20.0" text-anchor="start" font-size="15" fill="#16231B">Troon (+93%, off the chart)</text>
+<circle cx="291.6" cy="281.8" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Orlando: $10.4M, −15% vs. peer path</title></circle>
+<circle cx="195.5" cy="232.3" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Pelham: $6.1M, −1% vs. peer path</title></circle>
+<circle cx="90.8" cy="251.7" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Stanwich: $1.5M, −7% vs. peer path</title></circle>
+<circle cx="96.6" cy="253.5" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Nassau: $1.7M, −7% vs. peer path</title></circle>
+<circle cx="98.2" cy="242.8" r="7" fill="#FFFFFF" stroke="#C4823A" stroke-width="3"><title>Columbus: $1.8M, −4% vs. peer path</title></circle>
+<circle cx="208.7" cy="16.0" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Inverness: $6.7M, +65% vs. peer path</title></circle>
+<text x="216.7" y="20.0" text-anchor="start" font-size="15" fill="#16231B">Inverness (+65%, off the chart)</text>
+<circle cx="151.1" cy="122.0" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Oak Hill East: $4.1M, +30% vs. peer path</title></circle>
+<circle cx="217.7" cy="153.7" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Winged Foot West: $7.1M, +21% vs. peer path</title></circle>
+<circle cx="224.4" cy="244.0" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Scioto: $7.4M, −5% vs. peer path</title></circle>
+<circle cx="459.0" cy="303.9" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Baltusrol Lower: $17.8M, −21% vs. peer path</title></circle>
+<text x="469.0" y="307.9" text-anchor="start" font-size="15" fill="#16231B">Baltusrol Lower</text>
+<circle cx="430.5" cy="246.8" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Congressional Blue: $16.6M, −5% vs. peer path</title></circle>
+<text x="420.5" y="250.8" text-anchor="end" font-size="15" fill="#16231B">Congressional Blue</text>
+<circle cx="229.3" cy="313.5" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Bel-Air: $7.6M, −24% vs. peer path</title></circle>
+<text x="239.3" y="317.5" text-anchor="start" font-size="15" fill="#16231B">Bel-Air</text>
+<circle cx="226.8" cy="219.1" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Merion East: $7.5M, +3% vs. peer path</title></circle>
+<circle cx="172.3" cy="130.2" r="8" fill="#2F7A4C" stroke="#FFFFFF" stroke-width="2"><title>Cape Fear: $5.1M, +28% vs. peer path</title></circle>
+</svg>
+    </div>
+    <div class="body">
+      <div class="stats">
+        <div><span class="num">+3%</span><span class="what">Revenue uplift, big-name architects (median of 9); median spend $7.4M</span></div>
+        <div><span class="num">+9%</span><span class="what">Revenue uplift, everyone else (median of 24); median spend $4.6M</span></div>
+      </div>
+      <p class="note">5 of 9 star projects reopened in the boom, so the fair test is within an era. Before 2020: +24% (4 clubs) against +12% (16 clubs). In 2020-22: −5% (5) against +3% (8). The edge flips with the era, on very few clubs.</p>
+    </div>
+  </div>
+  <div class="takeaway"><span class="label">So what</span><span>For a buyer, the architect is a cost line, not a return driver. Pay for a name only where tournaments or reputation justify it; at a full, waitlisted club the payoff shows up in membership value, not dues.</span></div>
+  <div class="foot"><span>One club&rsquo;s spend could not be measured from its balance sheet. Source: IRS Form 990 via ProPublica; author&rsquo;s analysis.</span><span class="pg">16 / 22</span></div>
+</section>
+
+<section class="slide" id="risks">
+  <div class="chrome label"><span class="sec"><b>17</b>Risks and mitigants</span><span>Return on the Back Nine</span></div>
+  <h2>The buy is the safe part; the renovation needs diligence</h2>
+  <div class="tablewrap"><table class="risks">
+    <thead><tr><th>Risk</th><th>What the data says</th><th>Mitigant</th></tr></thead>
+    <tbody>
+      <tr><td>Market timing</td><td>In 2020-22 the median lift was −1%: every club grew, so a new course won no members.</td><td>Underwrite clubs with room to grow; test the local market before the course.</td></tr>
+      <tr><td>The lift may not cover the spend</td><td>At the median lift a $6.1M renovation adds about $4.9M of exit value.</td><td>Price the deal on the no-renovation case and treat the lift as upside.</td></tr>
+      <tr><td>Small sample, wide range</td><td>33 clubs; the 95% range on the median lift is −4% to +20%. A gap this large between eras shows up by chance about 12% of the time.</td><td>Use the median as the base case and stress the low end (slide 11).</td></tr>
+      <tr><td>Capex overrun</td><td>Big-name architects cost about 1.6x as much with no steady revenue premium.</td><td>Cap the budget; pay for a name only where tournaments or reputation justify it.</td></tr>
+      <tr><td>Leverage</td><td>Debt lifts the no-renovation return more than the renovation&rsquo;s.</td><td>Size debt to the base case; the club&rsquo;s own debt is only 0.35x revenue.</td></tr>
+      <tr><td>Data limits</td><td>Form 990s show revenue, not EBITDA; fiscal years differ; Four clubs hosted pro events after reopening.</td><td>Margins are modeled; robustness checks are in the appendix (slide 19).</td></tr>
+    </tbody>
+  </table></div>
+  <div class="takeaway"><span class="label">So what</span><span>None of these breaks the thesis. Together they say: buy below the platform multiple, and spend on the course only where the club can still win members.</span></div>
+  <div class="foot"><span>A negative number means revenue grew less than peers&rsquo;, not that a renovation failed.</span><span class="pg">17 / 22</span></div>
+</section>
+
+<!-- 4 method -->
+<section class="slide" id="method">
+  <div class="chrome label"><span class="sec"><b>18</b>Appendix &middot; Method</span><span>Return on the Back Nine</span></div>
+  <h2>The test: a club&rsquo;s revenue growth minus its peers&rsquo; growth over the same years</h2>
+  <p class="dek">This is a difference-in-differences test. Comparing with peers nets out anything that hit every club at once, like the COVID boom. The book reports the result as revenue uplift, (1 + club growth) / (1 + peer growth) &minus; 1; the appendix keeps the original measure in points, club growth minus peer growth. Worked example, Contra Costa Country Club, an uplift of +23%:</p>
+  <div class="formula" aria-label="Club growth of 44 percent minus peers growth of 17 percent equals a renovation effect of +27 points">
+    <div class="box"><span class="label">Club&rsquo;s growth</span><span class="num">+44%</span><span class="note">Core member revenue, $3.94M before to $5.67M after</span></div>
+    <span class="op" aria-hidden="true">&minus;</span>
+    <div class="box"><span class="label">Peers&rsquo; growth</span><span class="num">+17%</span><span class="note">Median of comparison clubs, same years</span></div>
+    <span class="op" aria-hidden="true">=</span>
+    <div class="box result"><span class="label">Renovation effect</span><span class="num">+27 pts</span><span class="note">Percentage points beyond peers</span></div>
+  </div>
+  <div class="rules">
+    <div><b>Renovated clubs: 33</b>Member-owned clubs that reopened a renovated course in fiscal 2015 to 2022. Fifteen were added in this round: fourteen from renovation news and Columbus CC, moved over from the peers.</div>
+    <div><b>Comparison clubs: 21</b>Member-owned clubs whose assets never rose more than 15% in one year of the window (20% to 30% where too few qualified). Ten added in this round, matched on size and checked against renovation news.</div>
+    <div><b>Core member revenue</b>Total revenue minus initiation fees and capital contributions, and minus public-use income. Dues, golf, dining and other member spending.</div>
+    <div><b>Before and after</b>Average of the 4th and 3rd years before reopening against the 2nd and 3rd years after. Fiscal years, labeled by the year they end.</div>
+    <div><b>Fee-line rule</b>Part V, line 12a must be filled in for all four years, or one-time money can hide in revenue. Southern Hills and Seminole fail it.</div>
+    <div><b>Spend and borrowing</b>Rise in total assets and in total liabilities over the three years to reopening. Matches reported costs at Diablo and Baltusrol.</div>
+  </div>
+  <div class="foot"><span>Data: IRS Form 990 filings of 501(c)(7) social clubs, via ProPublica Nonprofit Explorer and the IRS&rsquo;s own e-file returns.</span><span class="pg">18 / 22</span></div>
+</section>
+
+<!-- 9 robustness -->
+<section class="slide" id="robust">
+  <div class="chrome label"><span class="sec"><b>19</b>Appendix &middot; Robustness</span><span>Return on the Back Nine</span></div>
+  <h2>The timing split held in all 10 checks, but the gap is smaller than it was</h2>
+  <div class="chartbox">
+    <div class="legend"><span><i class="c1 dot"></i>Reopened before 2020</span><span><i class="c2 dot"></i>Reopened 2020-22</span><span>Right column: median of all clubs in the check</span></div>
+<div class="db-axis"><span></span><span class="tr"><span class="t" style="left:0.00%">−30</span><span class="t" style="left:33.33%">0</span><span class="t" style="left:66.67%">+30</span><span class="t" style="left:100.00%">+60</span></span><span class="h">All</span></div>
+<div class="db main" title="Main result: +20 vs. −2"><span class="nm">Main result</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
+<div class="db" title="Add back Southern Hills and Seminole, estimating their blank fee lines: +20 vs. −2"><span class="nm">Add back Southern Hills and Seminole, estimating their blank fee lines</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
+<div class="db" title="Drop the 4 clubs that hosted a pro event after reopening: +14 vs. −2"><span class="nm">Drop the 4 clubs that hosted a pro event after reopening</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:17.85%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:49.30%"></span></span><span class="v">+7</span></div>
+<div class="db" title="Total revenue, with one-time fees and assessments left in: +7 vs. +5"><span class="nm">Total revenue, with one-time fees and assessments left in</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:39.02%;width:2.26%"></span><span class="d c2" style="left:39.02%"></span><span class="d c1" style="left:41.28%"></span></span><span class="v">+5</span></div>
+<div class="db" title="Wider windows: three years before and three after: +16 vs. +4"><span class="nm">Wider windows: three years before and three after</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:38.06%;width:13.53%"></span><span class="d c2" style="left:38.06%"></span><span class="d c1" style="left:51.59%"></span></span><span class="v">+11</span></div>
+<div class="db" title="Fiscal years lined up with peers’ calendar years: +20 vs. −2"><span class="nm">Fiscal years lined up with peers’ calendar years</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.45%;width:24.09%"></span><span class="d c2" style="left:31.45%"></span><span class="d c1" style="left:55.54%"></span></span><span class="v">+11</span></div>
+<div class="db" title="Drop the phased projects (Cedar Rapids, Pelham, Columbus): +24 vs. −2"><span class="nm">Drop the phased projects (Cedar Rapids, Pelham, Columbus)</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:31.38%;width:28.17%"></span><span class="d c2" style="left:31.38%"></span><span class="d c1" style="left:59.55%"></span></span><span class="v">+15</span></div>
+<div class="db" title="The original clubs only: +48 vs. +2"><span class="nm">The original clubs only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:35.77%;width:50.36%"></span><span class="d c2" style="left:35.77%"></span><span class="d c1" style="left:86.13%"></span></span><span class="v">+22</span></div>
+<div class="db" title="The 8 clubs added in round two only: +7 vs. +4"><span class="nm">The 8 clubs added in round two only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:37.23%;width:4.10%"></span><span class="d c2" style="left:37.23%"></span><span class="d c1" style="left:41.33%"></span></span><span class="v">+5</span></div>
+<div class="db" title="The 15 clubs added in round three only: +18 vs. −5"><span class="nm">The 15 clubs added in round three only</span><span class="tr"><span class="zero" style="left:33.33%"></span><span class="ln" style="left:27.83%;width:25.24%"></span><span class="d c2" style="left:27.83%"></span><span class="d c1" style="left:53.07%"></span></span><span class="v">−2</span></div>
+  </div>
+  <div class="split even">
+    <p class="note">Dropping the 4 clubs that hosted a pro event after reopening cuts the overall median to +7 points, so tournaments likely help the top of the list. Total revenue pulls it to +5, mostly because some clubs collected contributions in the before years, which is why the study strips them out.</p>
+    <p class="note">A bootstrap (re-drawing the 33 clubs at random 20,000 times) puts a 95% range on the overall median of −5 to +25 points, which includes zero. For the pre-2020 group the range is −5 to +31 points, which now also includes zero.</p>
+  </div>
+  <details><summary>See the full robustness table</summary>
+    <div class="tablewrap"><table class="rob">
+      <thead><tr><th>Check</th><th class="n">Clubs</th><th class="n">Median (pts)</th><th class="n">Beat peers</th><th class="n">Pre-2020</th><th class="n">2020-22</th></tr></thead>
+      <tbody>
+<tr class="main"><td>Main result</td><td class="n">33</td><td class="n strong">+11</td><td class="n">19 of 33</td><td class="n">+20 <span class="yr">(20)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
+<tr><td>Add back Southern Hills and Seminole, estimating their blank fee lines</td><td class="n">35</td><td class="n strong">+11</td><td class="n">20 of 35</td><td class="n">+20 <span class="yr">(22)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
+<tr><td>Drop the 4 clubs that hosted a pro event after reopening</td><td class="n">29</td><td class="n strong">+7</td><td class="n">16 of 29</td><td class="n">+14 <span class="yr">(18)</span></td><td class="n">−2 <span class="yr">(11)</span></td></tr>
+<tr><td>Total revenue, with one-time fees and assessments left in<span class="note"> Swings come mostly from clubs collecting contributions in the before years.</span></td><td class="n">33</td><td class="n strong">+5</td><td class="n">19 of 33</td><td class="n">+7 <span class="yr">(20)</span></td><td class="n">+5 <span class="yr">(13)</span></td></tr>
+<tr><td>Wider windows: three years before and three after</td><td class="n">32</td><td class="n strong">+11</td><td class="n">19 of 32</td><td class="n">+16 <span class="yr">(19)</span></td><td class="n">+4 <span class="yr">(13)</span></td></tr>
+<tr><td>Fiscal years lined up with peers’ calendar years</td><td class="n">33</td><td class="n strong">+11</td><td class="n">19 of 33</td><td class="n">+20 <span class="yr">(20)</span></td><td class="n">−2 <span class="yr">(13)</span></td></tr>
+<tr><td>Drop the phased projects (Cedar Rapids, Pelham, Columbus)</td><td class="n">30</td><td class="n strong">+15</td><td class="n">19 of 30</td><td class="n">+24 <span class="yr">(18)</span></td><td class="n">−2 <span class="yr">(12)</span></td></tr>
+<tr><td>The original clubs only<span class="note"> 10 of the first 12 pass the fee-line rule.</span></td><td class="n">10</td><td class="n strong">+22</td><td class="n">7 of 10</td><td class="n">+48 <span class="yr">(4)</span></td><td class="n">+2 <span class="yr">(6)</span></td></tr>
+<tr><td>The 8 clubs added in round two only</td><td class="n">8</td><td class="n strong">+5</td><td class="n">5 of 8</td><td class="n">+7 <span class="yr">(7)</span></td><td class="n">+4 <span class="yr">(1)</span></td></tr>
+<tr><td>The 15 clubs added in round three only</td><td class="n">15</td><td class="n strong">−2</td><td class="n">7 of 15</td><td class="n">+18 <span class="yr">(9)</span></td><td class="n">−5 <span class="yr">(6)</span></td></tr>
+      </tbody>
+    </table></div>
+  </details>
+  <div class="foot"><span>Each row re-runs the whole study one different way. Results here are in points: club growth minus peer growth. Club counts per group are in the full table.</span><span class="pg">19 / 22</span></div>
+</section>
+
+<!-- 14 appendix -->
+<section class="slide" id="appendix">
+  <div class="chrome label"><span class="sec"><b>20</b>Appendix &middot; Club data</span><span>Return on the Back Nine</span></div>
+  <h2>Club by club</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Club</th><th>City</th><th>Architect</th><th class="n">Reopened (FY)</th><th class="n">Before ($M)</th><th class="n">After ($M)</th><th class="n">Growth</th><th class="n">Peers</th><th class="n">Uplift</th><th class="n">vs. peers (pts)</th></tr></thead>
+    <tbody>
+<tr><td class="club">Troon CC<span class="sub">Fiscal year end moved from December to September in 2021, and FY2017 revenue was unusually low, so its +139 is mostly a data effect.</span></td><td>Scottsdale, AZ</td><td>Tom Weiskopf & Phil Smith</td><td class="n">2021</td><td class="n">3.65</td><td class="n">10.52</td><td class="n">+188%</td><td class="n">+50%</td><td class="n strong">+93%</td><td class="n">+139</td></tr>
+<tr><td class="club">Inverness Club<span class="sub">Hosted the 2021 Solheim Cup in its after years.</span></td><td>Toledo, OH</td><td>Andrew Green</td><td class="n">2018</td><td class="n">4.47</td><td class="n">8.86</td><td class="n">+98%</td><td class="n">+20%</td><td class="n strong">+65%</td><td class="n">+78</td></tr>
+<tr><td class="club">Druid Hills GC</td><td>Atlanta, GA</td><td>Bill Bergin</td><td class="n">2017</td><td class="n">6.30</td><td class="n">10.88</td><td class="n">+73%</td><td class="n">+19%</td><td class="n strong">+45%</td><td class="n">+54</td></tr>
+<tr><td class="club">Birmingham CC (Mich.)<span class="sub">Course and clubhouse work together. Its balance sheet is too small to measure spend.</span></td><td>Birmingham, MI</td><td>Bruce Hepner</td><td class="n">2016</td><td class="n">4.20</td><td class="n">6.56</td><td class="n">+56%</td><td class="n">+14%</td><td class="n strong">+37%</td><td class="n">+42</td></tr>
+<tr><td class="club">Northwood Club<span class="sub">Member contributions began years before reopening; core revenue strips them out.</span></td><td>Dallas, TX</td><td>Tripp Davis</td><td class="n">2018</td><td class="n">7.23</td><td class="n">11.65</td><td class="n">+61%</td><td class="n">+20%</td><td class="n strong">+34%</td><td class="n">+41</td></tr>
+<tr><td class="club">Vestavia CC</td><td>Vestavia Hills, AL</td><td>Lester George</td><td class="n">2018</td><td class="n">6.81</td><td class="n">10.89</td><td class="n">+60%</td><td class="n">+20%</td><td class="n strong">+33%</td><td class="n">+40</td></tr>
+<tr><td class="club">Oak Hill CC (East)<span class="sub">Hosted the 2023 PGA Championship in its after years.</span></td><td>Rochester, NY</td><td>Andrew Green</td><td class="n">2020</td><td class="n">10.45</td><td class="n">18.91</td><td class="n">+81%</td><td class="n">+39%</td><td class="n strong">+30%</td><td class="n">+42</td></tr>
+<tr><td class="club">Cape Fear CC</td><td>Wilmington, NC</td><td>Andrew Green</td><td class="n">2019</td><td class="n">5.88</td><td class="n">9.61</td><td class="n">+63%</td><td class="n">+28%</td><td class="n strong">+28%</td><td class="n">+35</td></tr>
+<tr><td class="club">Contra Costa CC<span class="sub">Contributions spiked in 2014, the likely assessment year.</span></td><td>Pleasant Hill, CA</td><td>Robert Trent Jones II</td><td class="n">2015</td><td class="n">3.94</td><td class="n">5.67</td><td class="n">+44%</td><td class="n">+17%</td><td class="n strong">+23%</td><td class="n">+27</td></tr>
+<tr><td class="club">Chickasaw CC</td><td>Memphis, TN</td><td>Bill Bergin</td><td class="n">2018</td><td class="n">4.01</td><td class="n">5.88</td><td class="n">+47%</td><td class="n">+20%</td><td class="n strong">+22%</td><td class="n">+27</td></tr>
+<tr><td class="club">Winged Foot GC (West)<span class="sub">Hosted the 2020 U.S. Open, played without fans.</span></td><td>Mamaroneck, NY</td><td>Gil Hanse</td><td class="n">2017</td><td class="n">12.19</td><td class="n">17.52</td><td class="n">+44%</td><td class="n">+19%</td><td class="n strong">+21%</td><td class="n">+25</td></tr>
+<tr><td class="club">Kenwood CC (Kendale)<span class="sub">Nines reopened June and August 2020; fiscal year ends in March, so FY2021.</span></td><td>Cincinnati, OH</td><td>Fry/Straka</td><td class="n">2021</td><td class="n">5.18</td><td class="n">9.26</td><td class="n">+79%</td><td class="n">+50%</td><td class="n strong">+20%</td><td class="n">+29</td></tr>
+<tr><td class="club">Moraine CC</td><td>Kettering, OH</td><td>Keith Foster</td><td class="n">2016</td><td class="n">4.00</td><td class="n">5.46</td><td class="n">+36%</td><td class="n">+14%</td><td class="n strong">+19%</td><td class="n">+22</td></tr>
+<tr><td class="club">Sara Bay CC</td><td>Sarasota, FL</td><td>Kris Spence</td><td class="n">2018</td><td class="n">2.42</td><td class="n">3.33</td><td class="n">+38%</td><td class="n">+20%</td><td class="n strong">+15%</td><td class="n">+18</td></tr>
+<tr><td class="club">Fox Chapel GC</td><td>Pittsburgh, PA</td><td>Tom Marzolf (Fazio)</td><td class="n">2021</td><td class="n">4.82</td><td class="n">8.12</td><td class="n">+68%</td><td class="n">+50%</td><td class="n strong">+13%</td><td class="n">+19</td></tr>
+<tr><td class="club">Meadowbrook CC</td><td>Northville, MI</td><td>Andy Staples</td><td class="n">2017</td><td class="n">5.17</td><td class="n">6.71</td><td class="n">+30%</td><td class="n">+19%</td><td class="n strong">+9%</td><td class="n">+11</td></tr>
+<tr><td class="club">Diablo CC<span class="sub">Filings match the reported $12M cost.</span></td><td>Diablo, CA</td><td>Todd Eckenrode</td><td class="n">2020</td><td class="n">8.96</td><td class="n">13.51</td><td class="n">+51%</td><td class="n">+39%</td><td class="n strong">+8%</td><td class="n">+11</td></tr>
+<tr><td class="club">Baltimore CC (East)</td><td>Lutherville, MD</td><td>Keith Foster</td><td class="n">2016</td><td class="n">13.79</td><td class="n">16.74</td><td class="n">+21%</td><td class="n">+14%</td><td class="n strong">+6%</td><td class="n">+7</td></tr>
+<tr><td class="club">Merion GC (East)<span class="sub">Restoration finished in spring 2019 (FY ends February).</span></td><td>Ardmore, PA</td><td>Gil Hanse</td><td class="n">2020</td><td class="n">7.32</td><td class="n">10.46</td><td class="n">+43%</td><td class="n">+39%</td><td class="n strong">+3%</td><td class="n">+4</td></tr>
+<tr><td class="club">Pelham CC<span class="sub">Final phase of a long-running, phased project.</span></td><td>Pelham Manor, NY</td><td>Mike DeVries</td><td class="n">2020</td><td class="n">6.53</td><td class="n">8.99</td><td class="n">+38%</td><td class="n">+39%</td><td class="n strong">−1%</td><td class="n">−2</td></tr>
+<tr><td class="club">Biltmore Forest CC<span class="sub">Clubhouse restoration in the same years.</span></td><td>Asheville, NC</td><td>Brian Silva</td><td class="n">2015</td><td class="n">5.63</td><td class="n">6.33</td><td class="n">+12%</td><td class="n">+17%</td><td class="n strong">−4%</td><td class="n">−4</td></tr>
+<tr><td class="club">Columbus CC<span class="sub">Was a comparison club until this round; renovated in phases, all 18 holes reopened May 2018.</span></td><td>Columbus, OH</td><td>Kevin Hargrave</td><td class="n">2018</td><td class="n">3.20</td><td class="n">3.68</td><td class="n">+15%</td><td class="n">+20%</td><td class="n strong">−4%</td><td class="n">−5</td></tr>
+<tr><td class="club">Scioto CC</td><td>Columbus, OH</td><td>Andrew Green</td><td class="n">2022</td><td class="n">9.81</td><td class="n">14.56</td><td class="n">+48%</td><td class="n">+55%</td><td class="n strong">−5%</td><td class="n">−7</td></tr>
+<tr><td class="club">El Caballero CC</td><td>Tarzana, CA</td><td>Rees Jones</td><td class="n">2022</td><td class="n">7.86</td><td class="n">11.58</td><td class="n">+47%</td><td class="n">+55%</td><td class="n strong">−5%</td><td class="n">−8</td></tr>
+<tr><td class="club">Congressional CC (Blue)</td><td>Bethesda, MD</td><td>Andrew Green</td><td class="n">2021</td><td class="n">27.27</td><td class="n">38.62</td><td class="n">+42%</td><td class="n">+50%</td><td class="n strong">−5%</td><td class="n">−8</td></tr>
+<tr><td class="club">Stanwich Club</td><td>Greenwich, CT</td><td>Fazio Design</td><td class="n">2018</td><td class="n">7.48</td><td class="n">8.38</td><td class="n">+12%</td><td class="n">+20%</td><td class="n strong">−7%</td><td class="n">−8</td></tr>
+<tr><td class="club">Nassau CC</td><td>Glen Cove, NY</td><td>Fazio Design</td><td class="n">2022</td><td class="n">5.92</td><td class="n">8.54</td><td class="n">+44%</td><td class="n">+55%</td><td class="n strong">−7%</td><td class="n">−11</td></tr>
+<tr><td class="club">Woodmont CC (North)</td><td>Rockville, MD</td><td>McDonald Design</td><td class="n">2020</td><td class="n">17.72</td><td class="n">22.31</td><td class="n">+26%</td><td class="n">+39%</td><td class="n strong">−10%</td><td class="n">−13</td></tr>
+<tr><td class="club">Olympia Fields CC (North)<span class="sub">Reopened spring 2015; fiscal year ends in March, so FY2016.</span></td><td>Olympia Fields, IL</td><td>Mark Mungeam</td><td class="n">2016</td><td class="n">10.02</td><td class="n">10.34</td><td class="n">+3%</td><td class="n">+14%</td><td class="n strong">−10%</td><td class="n">−11</td></tr>
+<tr><td class="club">CC of Orlando</td><td>Orlando, FL</td><td>Ron Forse</td><td class="n">2018</td><td class="n">7.41</td><td class="n">7.54</td><td class="n">+2%</td><td class="n">+20%</td><td class="n strong">−15%</td><td class="n">−18</td></tr>
+<tr><td class="club">Cedar Rapids CC<span class="sub">Phased, mostly in-house work from 2011 to 2016; the course stayed open.</span></td><td>Cedar Rapids, IA</td><td>Ron Prichard</td><td class="n">2017</td><td class="n">5.13</td><td class="n">4.90</td><td class="n">−4%</td><td class="n">+19%</td><td class="n strong">−20%</td><td class="n">−23</td></tr>
+<tr><td class="club">Baltusrol GC (Lower)<span class="sub">Paid cash (GOLF.com). Hosted the 2023 KPMG Women’s PGA in its after years.</span></td><td>Springfield, NJ</td><td>Gil Hanse</td><td class="n">2022</td><td class="n">17.77</td><td class="n">21.69</td><td class="n">+22%</td><td class="n">+55%</td><td class="n strong">−21%</td><td class="n">−33</td></tr>
+<tr><td class="club">Bel-Air CC<span class="sub">Fiscal year ends in March, so its after years include the 2020 COVID shutdown and the start of a new clubhouse.</span></td><td>Los Angeles, CA</td><td>Tom Doak</td><td class="n">2019</td><td class="n">10.84</td><td class="n">10.51</td><td class="n">−3%</td><td class="n">+28%</td><td class="n strong">−24%</td><td class="n">−31</td></tr>
+    </tbody>
+  </table></div>
+  <div class="split even">
+    <p class="note"><b>Comparison clubs:</b> Tulsa CC, Bloomfield Hills CC, Athens CC, Marietta CC, Hope Valley CC, La Jolla CC, Lakewood CC (Colorado), Charlotte CC, CC of Landfall, Midland CC, Bethesda CC, Burning Tree CC, Oakmont CC (Glendale), Skokie CC, CC of Darien, Overbrook GC, Manor CC, Willow Oaks CC, Valley Brook CC, Del Paso CC and West Shore CC. <b>Robustness check only:</b> Southern Hills CC (Tulsa, Gil Hanse, FY2019) and Seminole GC (Juno Beach, Coore &amp; Crenshaw, FY2019) leave the initiation-fee line blank in their after years; Southern Hills also hosted the 2022 PGA Championship.</p>
+    <p class="note"><b>Left out:</b> Brook Hollow, Shady Oaks and Bear&rsquo;s Paw (no initiation fees reported in window years); Hillcrest, Los Angeles (fee line blank from fiscal 2019); Oakland Hills and Aronimink (not in ProPublica&rsquo;s data); Sycamore Hills (privately owned, no Form 990); Maketewah (too few years since reopening); Atlanta Athletic Club (overlapping projects); Country Club of Charleston (asset jump larger than the course work, missing years). This round: BraeBurn, Westchester Hills, North Ridge and Fort Lauderdale (fee line blank in a window year); Long Cove and Belfair (no Form 990 as a social club); Terravita (reopened FY2023). A log of every club considered, with the reason, is available from the author.</p>
+  </div>
+  <div class="foot"><span>Core member revenue. Before = average of the 4th and 3rd years before reopening; after = average of the 2nd and 3rd years after. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed.</span><span class="pg">20 / 22</span></div>
 </section>
 
 <!-- 13 limits -->
 <section class="slide" id="limits">
-  <div class="chrome label"><span class="sec"><b>16</b>Limits and method notes</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>21</b>Appendix &middot; Notes</span><span>Return on the Back Nine</span></div>
   <h2>The direction holds in every check; the size, and the odds it is luck, are not pinned down</h2>
   <div class="split even">
     <div class="panel">
@@ -959,68 +1070,19 @@ table.opts td:first-child { white-space: nowrap; }
     <div class="panel">
       <h3>How this was built</h3>
       <ul class="pts">
-        <li><b>Data.</b> Every club figure comes from IRS Form 990 filings: ProPublica&rsquo;s Nonprofit Explorer, plus the IRS&rsquo;s own e-file returns for recent years and for the debt lines. Dates and architects come from the sources on slide 18.</li>
+        <li><b>Data.</b> Every club figure comes from IRS Form 990 filings: ProPublica&rsquo;s Nonprofit Explorer, plus the IRS&rsquo;s own e-file returns for recent years and for the debt lines. Dates and architects come from the sources on slide 22.</li>
         <li><b>Rules first.</b> The window, peer screen and fee-line rule were set before the new clubs were added. Clubs that broke a rule were dropped or moved to a check, not adjusted.</li>
         <li><b>Fair reading.</b> A negative number means revenue grew less than peers&rsquo;, not that a renovation failed. Credit figures leave names out.</li>
         <li><b>AI use.</b> Colton Burkhalter set the question, the angle and the title, and directed the work. Claude, Anthropic&rsquo;s AI model, pulled the filings, ran the analysis and built this page.</li>
       </ul>
     </div>
   </div>
-  <div class="foot"><span>Return on the Back Nine</span><span class="pg">16 / 18</span></div>
-</section>
-
-<!-- 14 appendix -->
-<section class="slide" id="appendix">
-  <div class="chrome label"><span class="sec"><b>17</b>Appendix</span><span>Return on the Back Nine</span></div>
-  <h2>Club by club</h2>
-  <div class="tablewrap"><table>
-    <thead><tr><th>Club</th><th>City</th><th>Architect</th><th class="n">Reopened (FY)</th><th class="n">Before ($M)</th><th class="n">After ($M)</th><th class="n">Growth</th><th class="n">Peers</th><th class="n">vs. peers (pts)</th></tr></thead>
-    <tbody>
-<tr><td class="club">Troon CC<span class="sub">Fiscal year end moved from December to September in 2021, and FY2017 revenue was unusually low, so its +139 is mostly a data effect.</span></td><td>Scottsdale, AZ</td><td>Tom Weiskopf & Phil Smith</td><td class="n">2021</td><td class="n">3.65</td><td class="n">10.52</td><td class="n">+188%</td><td class="n">+50%</td><td class="n strong">+139</td></tr>
-<tr><td class="club">Inverness Club<span class="sub">Hosted the 2021 Solheim Cup in its after years.</span></td><td>Toledo, OH</td><td>Andrew Green</td><td class="n">2018</td><td class="n">4.47</td><td class="n">8.86</td><td class="n">+98%</td><td class="n">+20%</td><td class="n strong">+78</td></tr>
-<tr><td class="club">Druid Hills GC</td><td>Atlanta, GA</td><td>Bill Bergin</td><td class="n">2017</td><td class="n">6.30</td><td class="n">10.88</td><td class="n">+73%</td><td class="n">+19%</td><td class="n strong">+54</td></tr>
-<tr><td class="club">Birmingham CC (Mich.)<span class="sub">Course and clubhouse work together. Its balance sheet is too small to measure spend.</span></td><td>Birmingham, MI</td><td>Bruce Hepner</td><td class="n">2016</td><td class="n">4.20</td><td class="n">6.56</td><td class="n">+56%</td><td class="n">+14%</td><td class="n strong">+42</td></tr>
-<tr><td class="club">Oak Hill CC (East)<span class="sub">Hosted the 2023 PGA Championship in its after years.</span></td><td>Rochester, NY</td><td>Andrew Green</td><td class="n">2020</td><td class="n">10.45</td><td class="n">18.91</td><td class="n">+81%</td><td class="n">+39%</td><td class="n strong">+42</td></tr>
-<tr><td class="club">Northwood Club<span class="sub">Member contributions began years before reopening; core revenue strips them out.</span></td><td>Dallas, TX</td><td>Tripp Davis</td><td class="n">2018</td><td class="n">7.23</td><td class="n">11.65</td><td class="n">+61%</td><td class="n">+20%</td><td class="n strong">+41</td></tr>
-<tr><td class="club">Vestavia CC</td><td>Vestavia Hills, AL</td><td>Lester George</td><td class="n">2018</td><td class="n">6.81</td><td class="n">10.89</td><td class="n">+60%</td><td class="n">+20%</td><td class="n strong">+40</td></tr>
-<tr><td class="club">Cape Fear CC</td><td>Wilmington, NC</td><td>Andrew Green</td><td class="n">2019</td><td class="n">5.88</td><td class="n">9.61</td><td class="n">+63%</td><td class="n">+28%</td><td class="n strong">+35</td></tr>
-<tr><td class="club">Kenwood CC (Kendale)<span class="sub">Nines reopened June and August 2020; fiscal year ends in March, so FY2021.</span></td><td>Cincinnati, OH</td><td>Fry/Straka</td><td class="n">2021</td><td class="n">5.18</td><td class="n">9.26</td><td class="n">+79%</td><td class="n">+50%</td><td class="n strong">+29</td></tr>
-<tr><td class="club">Contra Costa CC<span class="sub">Contributions spiked in 2014, the likely assessment year.</span></td><td>Pleasant Hill, CA</td><td>Robert Trent Jones II</td><td class="n">2015</td><td class="n">3.94</td><td class="n">5.67</td><td class="n">+44%</td><td class="n">+17%</td><td class="n strong">+27</td></tr>
-<tr><td class="club">Chickasaw CC</td><td>Memphis, TN</td><td>Bill Bergin</td><td class="n">2018</td><td class="n">4.01</td><td class="n">5.88</td><td class="n">+47%</td><td class="n">+20%</td><td class="n strong">+27</td></tr>
-<tr><td class="club">Winged Foot GC (West)<span class="sub">Hosted the 2020 U.S. Open, played without fans.</span></td><td>Mamaroneck, NY</td><td>Gil Hanse</td><td class="n">2017</td><td class="n">12.19</td><td class="n">17.52</td><td class="n">+44%</td><td class="n">+19%</td><td class="n strong">+25</td></tr>
-<tr><td class="club">Moraine CC</td><td>Kettering, OH</td><td>Keith Foster</td><td class="n">2016</td><td class="n">4.00</td><td class="n">5.46</td><td class="n">+36%</td><td class="n">+14%</td><td class="n strong">+22</td></tr>
-<tr><td class="club">Fox Chapel GC</td><td>Pittsburgh, PA</td><td>Tom Marzolf (Fazio)</td><td class="n">2021</td><td class="n">4.82</td><td class="n">8.12</td><td class="n">+68%</td><td class="n">+50%</td><td class="n strong">+19</td></tr>
-<tr><td class="club">Sara Bay CC</td><td>Sarasota, FL</td><td>Kris Spence</td><td class="n">2018</td><td class="n">2.42</td><td class="n">3.33</td><td class="n">+38%</td><td class="n">+20%</td><td class="n strong">+18</td></tr>
-<tr><td class="club">Diablo CC<span class="sub">Filings match the reported $12M cost.</span></td><td>Diablo, CA</td><td>Todd Eckenrode</td><td class="n">2020</td><td class="n">8.96</td><td class="n">13.51</td><td class="n">+51%</td><td class="n">+39%</td><td class="n strong">+11</td></tr>
-<tr><td class="club">Meadowbrook CC</td><td>Northville, MI</td><td>Andy Staples</td><td class="n">2017</td><td class="n">5.17</td><td class="n">6.71</td><td class="n">+30%</td><td class="n">+19%</td><td class="n strong">+11</td></tr>
-<tr><td class="club">Baltimore CC (East)</td><td>Lutherville, MD</td><td>Keith Foster</td><td class="n">2016</td><td class="n">13.79</td><td class="n">16.74</td><td class="n">+21%</td><td class="n">+14%</td><td class="n strong">+7</td></tr>
-<tr><td class="club">Merion GC (East)<span class="sub">Restoration finished in spring 2019 (FY ends February).</span></td><td>Ardmore, PA</td><td>Gil Hanse</td><td class="n">2020</td><td class="n">7.32</td><td class="n">10.46</td><td class="n">+43%</td><td class="n">+39%</td><td class="n strong">+4</td></tr>
-<tr><td class="club">Pelham CC<span class="sub">Final phase of a long-running, phased project.</span></td><td>Pelham Manor, NY</td><td>Mike DeVries</td><td class="n">2020</td><td class="n">6.53</td><td class="n">8.99</td><td class="n">+38%</td><td class="n">+39%</td><td class="n strong">−2</td></tr>
-<tr><td class="club">Biltmore Forest CC<span class="sub">Clubhouse restoration in the same years.</span></td><td>Asheville, NC</td><td>Brian Silva</td><td class="n">2015</td><td class="n">5.63</td><td class="n">6.33</td><td class="n">+12%</td><td class="n">+17%</td><td class="n strong">−4</td></tr>
-<tr><td class="club">Columbus CC<span class="sub">Was a comparison club until this round; renovated in phases, all 18 holes reopened May 2018.</span></td><td>Columbus, OH</td><td>Kevin Hargrave</td><td class="n">2018</td><td class="n">3.20</td><td class="n">3.68</td><td class="n">+15%</td><td class="n">+20%</td><td class="n strong">−5</td></tr>
-<tr><td class="club">Scioto CC</td><td>Columbus, OH</td><td>Andrew Green</td><td class="n">2022</td><td class="n">9.81</td><td class="n">14.56</td><td class="n">+48%</td><td class="n">+55%</td><td class="n strong">−7</td></tr>
-<tr><td class="club">Congressional CC (Blue)</td><td>Bethesda, MD</td><td>Andrew Green</td><td class="n">2021</td><td class="n">27.27</td><td class="n">38.62</td><td class="n">+42%</td><td class="n">+50%</td><td class="n strong">−8</td></tr>
-<tr><td class="club">Stanwich Club</td><td>Greenwich, CT</td><td>Fazio Design</td><td class="n">2018</td><td class="n">7.48</td><td class="n">8.38</td><td class="n">+12%</td><td class="n">+20%</td><td class="n strong">−8</td></tr>
-<tr><td class="club">El Caballero CC</td><td>Tarzana, CA</td><td>Rees Jones</td><td class="n">2022</td><td class="n">7.86</td><td class="n">11.58</td><td class="n">+47%</td><td class="n">+55%</td><td class="n strong">−8</td></tr>
-<tr><td class="club">Olympia Fields CC (North)<span class="sub">Reopened spring 2015; fiscal year ends in March, so FY2016.</span></td><td>Olympia Fields, IL</td><td>Mark Mungeam</td><td class="n">2016</td><td class="n">10.02</td><td class="n">10.34</td><td class="n">+3%</td><td class="n">+14%</td><td class="n strong">−11</td></tr>
-<tr><td class="club">Nassau CC</td><td>Glen Cove, NY</td><td>Fazio Design</td><td class="n">2022</td><td class="n">5.92</td><td class="n">8.54</td><td class="n">+44%</td><td class="n">+55%</td><td class="n strong">−11</td></tr>
-<tr><td class="club">Woodmont CC (North)</td><td>Rockville, MD</td><td>McDonald Design</td><td class="n">2020</td><td class="n">17.72</td><td class="n">22.31</td><td class="n">+26%</td><td class="n">+39%</td><td class="n strong">−13</td></tr>
-<tr><td class="club">CC of Orlando</td><td>Orlando, FL</td><td>Ron Forse</td><td class="n">2018</td><td class="n">7.41</td><td class="n">7.54</td><td class="n">+2%</td><td class="n">+20%</td><td class="n strong">−18</td></tr>
-<tr><td class="club">Cedar Rapids CC<span class="sub">Phased, mostly in-house work from 2011 to 2016; the course stayed open.</span></td><td>Cedar Rapids, IA</td><td>Ron Prichard</td><td class="n">2017</td><td class="n">5.13</td><td class="n">4.90</td><td class="n">−4%</td><td class="n">+19%</td><td class="n strong">−23</td></tr>
-<tr><td class="club">Bel-Air CC<span class="sub">Fiscal year ends in March, so its after years include the 2020 COVID shutdown and the start of a new clubhouse.</span></td><td>Los Angeles, CA</td><td>Tom Doak</td><td class="n">2019</td><td class="n">10.84</td><td class="n">10.51</td><td class="n">−3%</td><td class="n">+28%</td><td class="n strong">−31</td></tr>
-<tr><td class="club">Baltusrol GC (Lower)<span class="sub">Paid cash (GOLF.com). Hosted the 2023 KPMG Women’s PGA in its after years.</span></td><td>Springfield, NJ</td><td>Gil Hanse</td><td class="n">2022</td><td class="n">17.77</td><td class="n">21.69</td><td class="n">+22%</td><td class="n">+55%</td><td class="n strong">−33</td></tr>
-    </tbody>
-  </table></div>
-  <div class="split even">
-    <p class="note"><b>Comparison clubs:</b> Tulsa CC, Bloomfield Hills CC, Athens CC, Marietta CC, Hope Valley CC, La Jolla CC, Lakewood CC (Colorado), Charlotte CC, CC of Landfall, Midland CC, Bethesda CC, Burning Tree CC, Oakmont CC (Glendale), Skokie CC, CC of Darien, Overbrook GC, Manor CC, Willow Oaks CC, Valley Brook CC, Del Paso CC and West Shore CC. <b>Robustness check only:</b> Southern Hills CC (Tulsa, Gil Hanse, FY2019) and Seminole GC (Juno Beach, Coore &amp; Crenshaw, FY2019) leave the initiation-fee line blank in their after years; Southern Hills also hosted the 2022 PGA Championship.</p>
-    <p class="note"><b>Left out:</b> Brook Hollow, Shady Oaks and Bear&rsquo;s Paw (no initiation fees reported in window years); Hillcrest, Los Angeles (fee line blank from fiscal 2019); Oakland Hills and Aronimink (not in ProPublica&rsquo;s data); Sycamore Hills (privately owned, no Form 990); Maketewah (too few years since reopening); Atlanta Athletic Club (overlapping projects); Country Club of Charleston (asset jump larger than the course work, missing years). This round: BraeBurn, Westchester Hills, North Ridge and Fort Lauderdale (fee line blank in a window year); Long Cove and Belfair (no Form 990 as a social club); Terravita (reopened FY2023). A log of every club considered, with the reason, is available from the author.</p>
-  </div>
-  <div class="foot"><span>Core member revenue. Before = average of the 4th and 3rd years before reopening; after = average of the 2nd and 3rd years after. A negative number means revenue grew less than peers&rsquo;, not that the renovation failed.</span><span class="pg">17 / 18</span></div>
+  <div class="foot"><span>Return on the Back Nine</span><span class="pg">21 / 22</span></div>
 </section>
 
 <!-- 15 sources -->
 <section class="slide" id="sources">
-  <div class="chrome label"><span class="sec"><b>18</b>Sources</span><span>Return on the Back Nine</span></div>
+  <div class="chrome label"><span class="sec"><b>22</b>Sources</span><span>Return on the Back Nine</span></div>
   <h2>Sources</h2>
   <div class="split even">
     <div class="body">
@@ -1084,7 +1146,7 @@ table.opts td:first-child { white-space: nowrap; }
       </ul>
     </div>
   </div>
-  <div class="foot"><span>All figures in $ millions unless noted. Project by Colton Burkhalter. The acquisition model is illustrative and is not investment advice.</span><span class="pg">18 / 18</span></div>
+  <div class="foot"><span>All figures in $ millions unless noted. Project by Colton Burkhalter. The acquisition model is illustrative and is not investment advice.</span><span class="pg">22 / 22</span></div>
 </section>
 
 </main>
@@ -1117,7 +1179,7 @@ function runCase(p, reno) {
     const fcf = e - m - tx - c - interest;
     const exitEq = t === 7 ? p.mult * e - loan : 0;
     cfs.push(fcf + exitEq);
-    rows.push({ t, rev, e, cf: fcf + exitEq });
+    rows.push({ t, rev, e, m, tx, c, interest, fcf, exit: exitEq, cf: fcf + exitEq });
   }
   return { cfs, rows, entry, equity, loan, price, e0 };
 }
@@ -1298,13 +1360,13 @@ function evaluateLbo(p) {
     var p = params(); p.lev = parseFloat($('l-lev').value); p.rate = parseFloat($('l-rate').value) / 100;
     $('lo-lev').textContent = p.lev.toFixed(2).replace(/0$/, '') + 'x';
     $('lo-rate').textContent = (p.rate * 100).toFixed(2).replace(/0$/, '') + '%';
-    $('l-carry').textContent = 'Carried over from slide 13: revenue lift ' + (p.uplift < 0 ? MINUS : '+') + Math.abs(p.uplift * 100).toFixed(1) + '%, exit at ' + p.mult.toFixed(2).replace(/0$/, '') + 'x, renovation $' + p.capex.toFixed(1) + 'M.';
+    $('l-carry').textContent = 'Carried over from slide 9: revenue lift ' + (p.uplift < 0 ? MINUS : '+') + Math.abs(p.uplift * 100).toFixed(1) + '%, exit at ' + p.mult.toFixed(2).replace(/0$/, '') + 'x, renovation $' + p.capex.toFixed(1) + 'M.';
     var r = evaluateLbo(p), c = r.reno;
     $('l-irr').textContent = pctTxt(r.irr); $('l-sq').textContent = pctTxt(r.irrSq);
     $('l-inc').textContent = pctTxt(r.irrInc); $('l-moic').textContent = r.moic.toFixed(2) + 'x';
     var better = r.irr !== null && r.irrSq !== null && r.irr > r.irrSq;
     var v = $('l-verdict'); v.className = 'verdict ' + (better ? 'good' : 'warn');
-    v.textContent = (better ? 'Renovating raises' : 'Renovating lowers') + ' the equity return · all-cash IRR on slide 13: ' + pctTxt(r.irrUnlev);
+    v.textContent = (better ? 'Renovating raises' : 'Renovating lowers') + ' the equity return · all-cash IRR on slide 9: ' + pctTxt(r.irrUnlev);
     var f = function (x) { return x.toFixed(1); };
     $('l-su').innerHTML =
       '<tr class="h"><td>Uses</td><td class="n"></td></tr>' +
@@ -1382,7 +1444,7 @@ function evaluateLbo(p) {
       : 'A member staying more than ' + c.breakeven.toFixed(1) + ' years pays less through the assessment; anyone leaving sooner pays less through the loan. The real trade is today’s members against tomorrow’s.';
     $('b-t1').textContent = usd(c.assess) + ' up front, often split over two or three years.';
     $('b-t2').textContent = usd(c.perYear) + ' a year for 15 years, ' + usd(c.total) + ' in all.';
-    $('b-t3').textContent = 'Nothing for the project. In the deal on slide 13 the buyer pays off $' + parseFloat($('in-debt').value).toFixed(1) + 'M of club debt, takes on $' + parseFloat($('in-assumed').value).toFixed(1) + 'M of other liabilities and pays members $2.0M, about ' + usd(2e6 / mem) + ' each.';
+    $('b-t3').textContent = 'Nothing for the project. In the deal on slide 9 the buyer pays off $' + parseFloat($('in-debt').value).toFixed(1) + 'M of club debt, takes on $' + parseFloat($('in-assumed').value).toFixed(1) + 'M of other liabilities and pays members $2.0M, about ' + usd(2e6 / mem) + ' each.';
     boardChart(c);
   }
   ['b-cost', 'b-mem', 'b-rate'].forEach(function (id) { $(id).addEventListener('input', renderBoard); });
